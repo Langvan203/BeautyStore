@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "vMkSS7yilne2N9CY6+IbgGvxVvjALaNmJEdJ2RYwp04=",
+  "Source": "my-cosmetic-store",
+  "BasePath": "_content/my-cosmetic-store",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
