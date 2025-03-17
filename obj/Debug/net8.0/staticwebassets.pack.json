@@ -1,0 +1,253 @@
+{
+  "Files": [
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\0120347e-9067-4b44-9319-916aa60c00d2-ảnh cv.jpg",
+      "PackagePath": "staticwebassets\\images\\0120347e-9067-4b44-9319-916aa60c00d2-ảnh cv.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\08cc8706-9698-4d96-b046-4a7d9c67dc04WIN_20250313_16_44_27_Pro.jpg",
+      "PackagePath": "staticwebassets\\images\\08cc8706-9698-4d96-b046-4a7d9c67dc04WIN_20250313_16_44_27_Pro.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\170a4bc4-feb7-4130-bd79-0b3fb51f21c4anhnuochoalogo.jpg",
+      "PackagePath": "staticwebassets\\images\\170a4bc4-feb7-4130-bd79-0b3fb51f21c4anhnuochoalogo.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\21a23612-efca-4401-a6dc-4ea1136403fc.jpg",
+      "PackagePath": "staticwebassets\\images\\21a23612-efca-4401-a6dc-4ea1136403fc.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\279d939a-782b-46e3-a0e3-34ef63aaa1c6.jpg",
+      "PackagePath": "staticwebassets\\images\\279d939a-782b-46e3-a0e3-34ef63aaa1c6.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\3a8d9a56-1969-4ddd-bd7a-ac7653db755aWIN_20250313_16_44_27_Pro.jpg",
+      "PackagePath": "staticwebassets\\images\\3a8d9a56-1969-4ddd-bd7a-ac7653db755aWIN_20250313_16_44_27_Pro.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\53d5d175-6215-46e8-b335-5c3f05ea7461WIN_20250306_12_12_34_Pro.jpg",
+      "PackagePath": "staticwebassets\\images\\53d5d175-6215-46e8-b335-5c3f05ea7461WIN_20250306_12_12_34_Pro.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\591a474e-c2ea-4003-bcd0-05b6f25d0a9c.jpg",
+      "PackagePath": "staticwebassets\\images\\591a474e-c2ea-4003-bcd0-05b6f25d0a9c.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\6c288e87-6373-47fa-98e4-c97683821dff-Ảnh huế Cua.jpg",
+      "PackagePath": "staticwebassets\\images\\6c288e87-6373-47fa-98e4-c97683821dff-Ảnh huế Cua.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\7e1ce8f6-ace9-4721-8810-11ca1f1cf36eanhmyphamlogo.jpg",
+      "PackagePath": "staticwebassets\\images\\7e1ce8f6-ace9-4721-8810-11ca1f1cf36eanhmyphamlogo.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\a02a8c69-5918-4e22-bae4-b2f8d1ee11baWIN_20250306_12_12_34_Pro.jpg",
+      "PackagePath": "staticwebassets\\images\\a02a8c69-5918-4e22-bae4-b2f8d1ee11baWIN_20250306_12_12_34_Pro.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\a6ae05ff-276f-4135-9512-4bb12d3c63d9WIN_20250306_12_12_34_Pro.jpg",
+      "PackagePath": "staticwebassets\\images\\a6ae05ff-276f-4135-9512-4bb12d3c63d9WIN_20250306_12_12_34_Pro.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\0209b813-4d53-4ec8-bbc6-7f1df477d350-1671696426478-GAMMA-CHEMICALS.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\0209b813-4d53-4ec8-bbc6-7f1df477d350-1671696426478-GAMMA-CHEMICALS.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\041fcdf0-3483-4a62-a13d-e19ea10c9dbe-1667357462599-thuong-hieu-16brand.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\041fcdf0-3483-4a62-a13d-e19ea10c9dbe-1667357462599-thuong-hieu-16brand.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\2089b298-24d5-4d11-8b1c-9d6d4e66e904-1611365969236-1.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\2089b298-24d5-4d11-8b1c-9d6d4e66e904-1611365969236-1.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\25c8268b-1723-4a23-a16e-6726c9316c6b-logo-9-wishes.jpg",
+      "PackagePath": "staticwebassets\\images\\brands\\25c8268b-1723-4a23-a16e-6726c9316c6b-logo-9-wishes.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\2eee6727-f6db-412b-88ea-4f9b7169a6f4-logo-50-megumi.png",
+      "PackagePath": "staticwebassets\\images\\brands\\2eee6727-f6db-412b-88ea-4f9b7169a6f4-logo-50-megumi.png"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\30f4ac56-5c80-4abe-802c-509dffb566b6-logo-50-megumi.png",
+      "PackagePath": "staticwebassets\\images\\brands\\30f4ac56-5c80-4abe-802c-509dffb566b6-logo-50-megumi.png"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\46e2c6ea-dea6-46d1-8cb3-bd3ce9a7ad54-1611365663307-1.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\46e2c6ea-dea6-46d1-8cb3-bd3ce9a7ad54-1611365663307-1.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\5795cca7-df5f-42ef-91de-4cffd1893f10-cocoluxbrandlogo.jpg",
+      "PackagePath": "staticwebassets\\images\\brands\\5795cca7-df5f-42ef-91de-4cffd1893f10-cocoluxbrandlogo.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\62b6af56-19ab-4524-a152-e3fded64de05-1608015224539-3w.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\62b6af56-19ab-4524-a152-e3fded64de05-1608015224539-3w.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\6d797dd3-f686-498e-bd80-88e38fad175c-1667357462599-thuong-hieu-16brand.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\6d797dd3-f686-498e-bd80-88e38fad175c-1667357462599-thuong-hieu-16brand.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\6d79f79c-b73b-4754-b9f4-757598033567-1608015224539-3w.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\6d79f79c-b73b-4754-b9f4-757598033567-1608015224539-3w.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\6d8f7a97-018a-4bd2-94ce-c944ee27d1c1-1611365663307-1.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\6d8f7a97-018a-4bd2-94ce-c944ee27d1c1-1611365663307-1.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\8305f714-98c0-451d-b2e8-b38abb8ce162-1611366055007-1.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\8305f714-98c0-451d-b2e8-b38abb8ce162-1611366055007-1.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\9141b5d2-c758-44d7-804e-a0a237e26fdc-lorealbrandlogo.jpg",
+      "PackagePath": "staticwebassets\\images\\brands\\9141b5d2-c758-44d7-804e-a0a237e26fdc-lorealbrandlogo.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\a23ff1d0-2a7f-422f-a3bc-503b3e8d825f-1608091173928-goodal.jpeg",
+      "PackagePath": "staticwebassets\\images\\brands\\a23ff1d0-2a7f-422f-a3bc-503b3e8d825f-1608091173928-goodal.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brands\\af1f4cc4-ed42-4ec9-8d5c-8b2ffd665376-logo-9-wishes.jpg",
+      "PackagePath": "staticwebassets\\images\\brands\\af1f4cc4-ed42-4ec9-8d5c-8b2ffd665376-logo-9-wishes.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brandsb3735c75-4cd0-4efd-b2b8-49a09700e013-lorealbrandlogo.jpg",
+      "PackagePath": "staticwebassets\\images\\brandsb3735c75-4cd0-4efd-b2b8-49a09700e013-lorealbrandlogo.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brandsb783f9d5-3989-495f-8b53-792f3c7a10a1-cocoluxbrandlogo.jpg",
+      "PackagePath": "staticwebassets\\images\\brandsb783f9d5-3989-495f-8b53-792f3c7a10a1-cocoluxbrandlogo.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\brandsc19a1628-2189-447d-b6d7-e867ab60fc4e-lorealbrandlogo.jpg",
+      "PackagePath": "staticwebassets\\images\\brandsc19a1628-2189-447d-b6d7-e867ab60fc4e-lorealbrandlogo.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\cfc2598b-71a1-45c2-af07-34c7e7903c9canhchamsocdalogo.jpg",
+      "PackagePath": "staticwebassets\\images\\cfc2598b-71a1-45c2-af07-34c7e7903c9canhchamsocdalogo.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\d03b2443-e866-4b21-8a48-cf8ea66d7796ảnh cv.jpg",
+      "PackagePath": "staticwebassets\\images\\d03b2443-e866-4b21-8a48-cf8ea66d7796ảnh cv.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\d250a1c6-843d-4afc-abe6-4b4232c68517anhchamsoctoclogo.jpg",
+      "PackagePath": "staticwebassets\\images\\d250a1c6-843d-4afc-abe6-4b4232c68517anhchamsoctoclogo.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\e73709f9-dc13-411a-bbe6-95c6abb0e59c.jpg",
+      "PackagePath": "staticwebassets\\images\\e73709f9-dc13-411a-bbe6-95c6abb0e59c.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\12854208-2600-43f7-bd0f-53adbf697302.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\12854208-2600-43f7-bd0f-53adbf697302.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\32531ce4-2293-491a-a0a6-76ed81ab32a5.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\32531ce4-2293-491a-a0a6-76ed81ab32a5.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\364f154e-ee16-4585-b560-477dd2f4164e.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\364f154e-ee16-4585-b560-477dd2f4164e.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\40acb77b-f988-4cdf-8321-13e8f4ad4bdd.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\40acb77b-f988-4cdf-8321-13e8f4ad4bdd.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\591e9170-cd9e-4796-9f18-7f5dfc9efc35.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\591e9170-cd9e-4796-9f18-7f5dfc9efc35.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\73b6efe9-6131-4705-8b20-2fae47c24c96.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\73b6efe9-6131-4705-8b20-2fae47c24c96.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\86bb2b65-552a-4617-91af-78fd21dfc607.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\86bb2b65-552a-4617-91af-78fd21dfc607.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\8e28509e-9605-4f58-8d7c-d1f253462434.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\8e28509e-9605-4f58-8d7c-d1f253462434.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\93f428bf-dfc2-40de-9999-c753155efc87.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\93f428bf-dfc2-40de-9999-c753155efc87.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\99a1036e-985d-4d11-8f13-fa470e32c1ae.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\99a1036e-985d-4d11-8f13-fa470e32c1ae.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\a16567d9-6621-49bd-a066-59e60da3fffd.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\a16567d9-6621-49bd-a066-59e60da3fffd.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\b1ed32c9-fd5e-484b-82d9-8b2ade89dceb.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\b1ed32c9-fd5e-484b-82d9-8b2ade89dceb.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\b265725b-9df6-434e-8f82-ba53252e550c.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\b265725b-9df6-434e-8f82-ba53252e550c.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\b52a200a-4649-4e2a-9e9f-3d60ef926c7a.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\b52a200a-4649-4e2a-9e9f-3d60ef926c7a.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\b9a8b47d-ae6c-420e-8069-e3a88fa1965c.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\b9a8b47d-ae6c-420e-8069-e3a88fa1965c.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\ba5a977e-b3a8-4e8e-a8a8-e4c4be6b24fc.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\ba5a977e-b3a8-4e8e-a8a8-e4c4be6b24fc.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\cde492f8-8962-4f99-8276-f999118e818b.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\cde492f8-8962-4f99-8276-f999118e818b.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\d5ea8c43-6e66-475d-94d7-6d49e4b3487d.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\d5ea8c43-6e66-475d-94d7-6d49e4b3487d.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\e0eaea8b-3bbc-4da5-b4e0-c0f87c2fd91b.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\e0eaea8b-3bbc-4da5-b4e0-c0f87c2fd91b.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\e1530632-b834-4a5f-ab4b-cf0d8b624f4f.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\e1530632-b834-4a5f-ab4b-cf0d8b624f4f.jpg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\e727d3e9-704a-46f2-b8b2-be1b72c17dc7.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\e727d3e9-704a-46f2-b8b2-be1b72c17dc7.jpeg"
+    },
+    {
+      "Id": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\eb4c5dd0-f1b7-4e5b-8bfb-96953428a77b.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\eb4c5dd0-f1b7-4e5b-8bfb-96953428a77b.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.my-cosmetic-store.props",
+      "PackagePath": "build\\my-cosmetic-store.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.my-cosmetic-store.props",
+      "PackagePath": "buildMultiTargeting\\my-cosmetic-store.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.my-cosmetic-store.props",
+      "PackagePath": "buildTransitive\\my-cosmetic-store.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.my-cosmetic-store.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.my-cosmetic-store.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

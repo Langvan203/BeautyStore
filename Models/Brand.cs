@@ -8,5 +8,8 @@ namespace my_cosmetic_store.Models
         public int BrandID { get; set; }
         public string Name { get; set; }
         public string? Description { get; set; }
+        public string? thumbNail { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 }

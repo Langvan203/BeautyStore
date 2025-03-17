@@ -8,7 +8,11 @@ namespace my_cosmetic_store.Mapper
     {
         public MappingContext()
         {
+            // Create request mapping
             CreateMap<CreateNewBrandRequest, Brand>();
+            CreateMap<CreateNewCarRequest, Cart>();
+            CreateMap<CreateNewCategoryRequest, Category>();
+            CreateMap<CreateNewChildrenCategory, ChildrenCategory>();
         }
     }
 }

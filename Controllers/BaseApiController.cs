@@ -12,7 +12,7 @@ namespace my_cosmetic_store.Controllers
     [ApiController]
     public class BaseApiController<T> : ControllerBase where T : BaseApiController<T>
     {
-        public int UserID
+        public int UserIDLogined
         {
             get
             {

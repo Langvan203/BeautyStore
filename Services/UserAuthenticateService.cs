@@ -44,7 +44,7 @@ namespace my_cosmetic_store.Services
                 var token = new JwtSecurityToken(
                     issuer: _apiOption.ValidIssuer,
                     audience: _apiOption.ValidAudience,
-                    expires: DateTime.Now.AddDays(1),
+                    expires: DateTime.Now.AddYears(1),
                     claims: claimList,
                     signingCredentials: credentials
                 );
@@ -87,6 +87,8 @@ namespace my_cosmetic_store.Services
                 throw ex;
             }
         }
+
+
 
     }
 }

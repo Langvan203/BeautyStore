@@ -7,5 +7,7 @@ namespace my_cosmetic_store.Models
         [Key]
         public int CartID { get; set; }
         public int UserID { get; set; }
+
+        public ICollection<Cart_Item> Cart_Items { get; set; }
     }
 }

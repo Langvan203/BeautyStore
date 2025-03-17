@@ -2,6 +2,7 @@
 using Microsoft.VisualBasic.FileIO;
 using my_cosmetic_store.Models;
 using my_cosmetic_store.Utility;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace my_cosmetic_store.Repository
@@ -21,10 +22,20 @@ namespace my_cosmetic_store.Repository
         {
             return Model.AsNoTracking();
         }
+
+        public IQueryable<T> GetTopItemsByCondition(Expression<Func<T, bool>> expression, int number)
+        {
+            return Model.Where(expression).Take(number);
+        }
+        public IQueryable<T> GetTopItems(int number)
+        {
+            return Model.Take(number);
+        }
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
         {
             return Model.Where(expression).AsNoTracking();
         }
+
         public async Task<int> CountByConditionAsync(Expression<Func<T, bool>> expression)
         {
             return await Model.CountAsync(expression);
@@ -34,6 +45,7 @@ namespace my_cosmetic_store.Repository
             try
             {
                 var model = Model.Add(entity);
+                SaveChange();
                 return model.Entity;
             }
             catch (Exception ex)
@@ -46,6 +58,7 @@ namespace my_cosmetic_store.Repository
             try
             {
                 Model.Update(entity);
+                SaveChange();
                 return entity;
             }
             catch (Exception ex)
@@ -58,6 +71,7 @@ namespace my_cosmetic_store.Repository
             try
             {
                 Model.Remove(entity);
+                SaveChange();
                 return true;
             }
             catch (Exception)
@@ -73,5 +87,22 @@ namespace my_cosmetic_store.Repository
         {
             await Context.SaveChangesAsync();
         }
+
+        public void AddRangeAsync(IEnumerable<T> collection)
+        {
+            Model.AddRange(collection);
+            SaveChange();
+        }
+        public void DeleteRange(IEnumerable<T> collection)
+        {
+            Model.RemoveRange(collection);
+            SaveChange();
+        }
+
+        public void UpdateRange(IEnumerable<T> collection)
+        {
+            Model.UpdateRange(collection);
+        }
+        
     }
 }

@@ -43,6 +43,9 @@ namespace my_cosmetic_store.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("thumbNail")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("BrandID");
 
                     b.ToTable("Brands");
@@ -81,6 +84,9 @@ namespace my_cosmetic_store.Migrations
                     b.Property<int>("CartID")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("CartItemPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("CartItemQuantity")
                         .HasColumnType("int");
 
@@ -94,6 +100,8 @@ namespace my_cosmetic_store.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Cart_ItemID");
+
+                    b.HasIndex("CartID");
 
                     b.ToTable("cart_Items");
                 });
@@ -118,6 +126,9 @@ namespace my_cosmetic_store.Migrations
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("thumbNail")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CategoryID");
 
@@ -285,6 +296,10 @@ namespace my_cosmetic_store.Migrations
 
                     b.HasKey("ProductID");
 
+                    b.HasIndex("BrandID");
+
+                    b.HasIndex("CategoryID");
+
                     b.ToTable("Products");
                 });
 
@@ -313,6 +328,8 @@ namespace my_cosmetic_store.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("ImageID");
+
+                    b.HasIndex("ProductID");
 
                     b.ToTable("Product_Images");
                 });
@@ -392,6 +409,63 @@ namespace my_cosmetic_store.Migrations
                     b.HasKey("UserID");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Cart_Item", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.Cart", null)
+                        .WithMany("Cart_Items")
+                        .HasForeignKey("CartID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Product", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("my_cosmetic_store.Models.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Product_Images", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.Product", null)
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Brand", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Cart", b =>
+                {
+                    b.Navigation("Cart_Items");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Product", b =>
+                {
+                    b.Navigation("ProductImages");
                 });
 #pragma warning restore 612, 618
         }

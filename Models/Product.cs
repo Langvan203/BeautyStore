@@ -13,5 +13,10 @@ namespace my_cosmetic_store.Models
         public decimal? ProductDiscount { get; set; }
         public int CategoryID { get; set; }
         public int BrandID { get; set; }
+
+        public ICollection<Product_Images> ProductImages { get; set; }
+
+        public Brand Brand { get; set; }
+        public Category Category { get; set; }
     }
 }
