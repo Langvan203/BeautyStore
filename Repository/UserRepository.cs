@@ -18,7 +18,7 @@ namespace my_cosmetic_store.Repository
             try
             {
                 var passwordByMD5 = UltilityFunction.CreateMD5(userLoginRequest.Password);
-                return Model.Where(row => row.UserName == userLoginRequest.UserName && row.Password == passwordByMD5).FirstOrDefault();
+                return Model.Where(row => row.Email == userLoginRequest.Email && row.Password == passwordByMD5).FirstOrDefault();
             }
             catch (Exception ex)
             {

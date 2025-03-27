@@ -8,7 +8,6 @@ using System.Security.Claims;
 namespace my_cosmetic_store.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "1")]
     [ApiController]
     public class BaseApiController<T> : ControllerBase where T : BaseApiController<T>
     {

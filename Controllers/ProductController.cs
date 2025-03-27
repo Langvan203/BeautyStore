@@ -23,9 +23,8 @@ namespace my_cosmetic_store.Controllers
         }
 
         [HttpPost("Create-product-images")]
-        [Consumes("multipart/form-data")]
         [Authorize(Roles = "1")]
-        public MessageData CreateProduct([FromForm]CreateNewProductRequest request)
+        public MessageData CreateProduct([FromForm] CreateNewProductRequest request)
         {
             try
             {
@@ -53,8 +52,36 @@ namespace my_cosmetic_store.Controllers
                 var products = _productService.GetAllProduct();
                 return new MessageData { Data = products, Des = "success" };
             }
-            catch(Exception ex)
-            { 
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+        [Authorize(Roles = "1")]
+        [HttpGet("Get-all-product-admin")]
+        public MessageData GetAllProductAdmin()
+        {
+            try
+            {
+                var products = _productService.GetAllProductAdmin();
+                return new MessageData { Data = products, Des = "success" };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+        [HttpGet("Get-product-update")]
+        [Authorize(Roles = "1")]
+        public MessageData GetProductUpdate(int productId)
+        {
+            try
+            {
+                var products = _productService.GetProductUpdate(productId);
+                return new MessageData { Data = products, Des = "success" };
+            }
+            catch (Exception ex)
+            {
                 return NG(ex);
             }
         }
@@ -147,6 +174,28 @@ namespace my_cosmetic_store.Controllers
             }
         }
 
+        [HttpGet("Pagnation-products")]
+        [AllowAnonymous]
+        public MessageData PagnationProduct(
+            [FromQuery] int? categoryid,
+            [FromQuery] int page = 1,
+            [FromQuery] int pagesize = 12,
+            [FromQuery] string? categories = null,
+            [FromQuery] string? brands = null,
+            [FromQuery] decimal? minPrice = null,
+            [FromQuery] decimal? maxPrice = null)
+        {
+            try
+            {
+                var products = _productService.pagnationProductByCondition(categoryid, minPrice, maxPrice, page, pagesize, categories, brands);
+                return new MessageData { Data = products, Des = "success" };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+
         [HttpDelete("Delete-product")]
         [Authorize(Roles = "1")]
         public MessageData DeleteProduct(int id)
@@ -164,7 +213,7 @@ namespace my_cosmetic_store.Controllers
 
         [HttpPut("Update-product")]
         [Authorize(Roles = "1")]
-        public MessageData UpdateProduct([FromForm]UpdateProductRequest request)
+        public MessageData UpdateProduct([FromForm] UpdateProductRequest request)
         {
             try
             {
@@ -176,5 +225,21 @@ namespace my_cosmetic_store.Controllers
                 return NG(ex);
             }
         }
+
+        [HttpPost]
+        [Authorize(Roles = "1")]
+        public MessageData DeleteImageInProduct(int productid, int imageid)
+        {
+            try
+            {
+                var products = _productService.DeleteProductImage(productid, imageid);
+                return new MessageData { Data = products, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+        
     }
 }

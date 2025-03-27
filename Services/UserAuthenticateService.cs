@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualBasic.FileIO;
@@ -17,12 +18,14 @@ namespace my_cosmetic_store.Services
         private readonly UserRepository _userRepository;
         private readonly ApiOptions _apiOption;
         private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public UserAuthenticateService(ApiOptions apiOption, DatabaseContext databaseContext, IMapper mapper)
+        public UserAuthenticateService(ApiOptions apiOption, DatabaseContext databaseContext, IMapper mapper, IWebHostEnvironment webHostEnvironment)
         {
             _userRepository = new UserRepository(apiOption, databaseContext, mapper);
             _apiOption = apiOption;
             _mapper = mapper;
+            _webHostEnvironment = webHostEnvironment;
         }
         public object UserLogin(my_cosmetic_store.Dtos.Request.LoginRequest request)
         {
@@ -74,9 +77,7 @@ namespace my_cosmetic_store.Services
                     UserName = request.UserName,
                     Password = UltilityFunction.CreateMD5(request.Password),
                     Phone = request.Phone,
-                    Address = request.Address,
-                    Email = request.Email
-
+                    Email = request.Email,
                 };
                 _userRepository.Create(newUser);
                 _userRepository.SaveChange();
@@ -86,6 +87,72 @@ namespace my_cosmetic_store.Services
             {
                 throw ex;
             }
+        }
+        public object UpdateUserInfors(int userID, UpdateUserInfor userUpdate)
+        {
+            var findUser = _userRepository.FindByCondition(x => x.UserID == userID).FirstOrDefault();
+            if (findUser != null)
+            {
+                findUser.UserName = userUpdate.UserName;
+                findUser.Phone = userUpdate.Phone;
+                findUser.UpdatedDate = DateTime.Now;
+                findUser.Email = userUpdate.Email;
+                findUser.Password = UltilityFunction.CreateMD5(userUpdate.Password);
+                findUser.DateOfBirth = userUpdate.DateOfBirth;
+                if (userUpdate.Avatar != null)
+                {
+                    var fileName = $"{Guid.NewGuid()}-{userUpdate.Avatar.FileName}";
+                    using (var filestream = File.Create(Path.Combine(_webHostEnvironment.WebRootPath + "\\images\\users\\" + fileName)))
+                    {
+                        userUpdate.Avatar.CopyTo(filestream);
+                        filestream.Flush();
+                    }
+                    findUser.Avatar = "\\images\\users\\" + fileName;
+                }
+                _userRepository.UpdateByEntity(findUser);
+                return findUser;
+            }
+            return null;
+        }
+        public object UpdateUserAddress(int userID, UpdateUserAdress userUpdate)
+        {
+            var findUser = _userRepository.FindByCondition(x => x.UserID == userID).FirstOrDefault();
+            if (findUser != null)
+            {
+                if (userUpdate.Address != null)
+                {
+                    findUser.Address = userUpdate.Address;
+                }
+                if (userUpdate.Phone != null)
+                {
+                    findUser.Phone = userUpdate.Phone;
+                }
+                findUser.UpdatedDate = DateTime.Now;
+                _userRepository.UpdateByEntity(findUser);
+                return findUser;
+            }
+            return null;
+        }
+
+        public object GetUserInfor(int UserID)
+        {
+            return _userRepository.FindByCondition(x => x.UserID == UserID).FirstOrDefault();
+        }
+
+        public object GetAllUserAdmin(int UserID)
+        {
+            return _userRepository.FindByCondition(x => x.UserID != UserID).Select(x => new
+            {
+                id = x.UserID,
+                username = x.UserName,
+                email = x.Email,
+                phone = x.Phone,
+                address = x.Address,
+                avatar = x.Avatar,
+                role = x.Role == 1 ? "Admin" : "Customer",
+                dateOfBirth = x.DateOfBirth,
+                gender = x.Gender == 1 ? "Nam" : "Nữ",
+            }).ToList();
         }
 
 

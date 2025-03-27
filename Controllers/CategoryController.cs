@@ -37,6 +37,34 @@ namespace my_cosmetic_store.Controllers
                 return NG(ex);
             }
         }
+        [HttpGet("Get-all-categories-admin")]
+        [Authorize(Roles = "1")]
+        public MessageData GetAllCategoriesAdmin()
+        {
+            try
+            {
+                var categories = _categoryService.GetAllCategoryAdmin();
+                return new MessageData { Data = categories, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+        [HttpGet("Get-category-id")]
+        [AllowAnonymous]
+        public MessageData GetCategoryId(int id)
+        {
+            try
+            {
+                var categories = _categoryService.GetCategoryByID(id);
+                return new MessageData { Data = categories, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
 
         [HttpGet("Get-top-categories")]
         [AllowAnonymous]

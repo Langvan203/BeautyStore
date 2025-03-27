@@ -62,6 +62,9 @@ namespace my_cosmetic_store.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsCheckOut")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -69,6 +72,8 @@ namespace my_cosmetic_store.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("CartID");
+
+                    b.HasIndex("UserID");
 
                     b.ToTable("Carts");
                 });
@@ -84,7 +89,7 @@ namespace my_cosmetic_store.Migrations
                     b.Property<int>("CartID")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("CartItemPrice")
+                    b.Property<decimal?>("CartItemPrice")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("CartItemQuantity")
@@ -96,12 +101,22 @@ namespace my_cosmetic_store.Migrations
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ProductVariantId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("VariantID")
+                        .HasColumnType("int");
 
                     b.HasKey("Cart_ItemID");
 
                     b.HasIndex("CartID");
+
+                    b.HasIndex("ProductVariantId");
+
+                    b.HasIndex("VariantID");
 
                     b.ToTable("cart_Items");
                 });
@@ -161,6 +176,30 @@ namespace my_cosmetic_store.Migrations
                     b.ToTable("ChildrenCategories");
                 });
 
+            modelBuilder.Entity("my_cosmetic_store.Models.HistoryOder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderID");
+
+                    b.ToTable("HistoryOder");
+                });
+
             modelBuilder.Entity("my_cosmetic_store.Models.Order", b =>
                 {
                     b.Property<int>("OrderID")
@@ -174,6 +213,14 @@ namespace my_cosmetic_store.Migrations
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceiverName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ShippingAdress")
                         .HasColumnType("nvarchar(max)");
@@ -192,6 +239,8 @@ namespace my_cosmetic_store.Migrations
 
                     b.HasKey("OrderID");
 
+                    b.HasIndex("UserID");
+
                     b.ToTable("Orders");
                 });
 
@@ -209,10 +258,10 @@ namespace my_cosmetic_store.Migrations
                     b.Property<int>("OrderID")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal?>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Product_ID")
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -222,6 +271,10 @@ namespace my_cosmetic_store.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("OrderItemID");
+
+                    b.HasIndex("OrderID");
+
+                    b.HasIndex("ProductID");
 
                     b.ToTable("Order_Items");
                 });
@@ -258,6 +311,42 @@ namespace my_cosmetic_store.Migrations
                     b.ToTable("Payments");
                 });
 
+            modelBuilder.Entity("my_cosmetic_store.Models.PaymentMethod", b =>
+                {
+                    b.Property<int>("PaymentMethodID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentMethodID"));
+
+                    b.Property<string>("CVV")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OuterDateUsing")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PaymentType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
+
+                    b.HasKey("PaymentMethodID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("PaymentMethods");
+                });
+
             modelBuilder.Entity("my_cosmetic_store.Models.Product", b =>
                 {
                     b.Property<int>("ProductID")
@@ -281,15 +370,21 @@ namespace my_cosmetic_store.Migrations
                     b.Property<decimal?>("ProductDiscount")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("ProductIngredient")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("ProductPrice")
+                    b.Property<decimal?>("ProductPrice")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("ProductStock")
                         .HasColumnType("int");
+
+                    b.Property<string>("ProductUserManual")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
@@ -301,6 +396,35 @@ namespace my_cosmetic_store.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.ProductVariant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("PriceOfVariant")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockOfVariant")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VariantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductID");
+
+                    b.HasIndex("VariantId");
+
+                    b.ToTable("Product_Variants");
                 });
 
             modelBuilder.Entity("my_cosmetic_store.Models.Product_Images", b =>
@@ -382,11 +506,20 @@ namespace my_cosmetic_store.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Avatar")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -411,13 +544,111 @@ namespace my_cosmetic_store.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("my_cosmetic_store.Models.Variant", b =>
+                {
+                    b.Property<int>("VariantId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VariantId"));
+
+                    b.Property<decimal>("PriceOfVariant")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("StockOfVariant")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VariantName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("VariantId");
+
+                    b.ToTable("Variants");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Cart", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("my_cosmetic_store.Models.Cart_Item", b =>
                 {
-                    b.HasOne("my_cosmetic_store.Models.Cart", null)
+                    b.HasOne("my_cosmetic_store.Models.Cart", "Cart")
                         .WithMany("Cart_Items")
                         .HasForeignKey("CartID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("my_cosmetic_store.Models.ProductVariant", null)
+                        .WithMany("Cart_Items")
+                        .HasForeignKey("ProductVariantId");
+
+                    b.HasOne("my_cosmetic_store.Models.ProductVariant", "ProductVariant")
+                        .WithMany()
+                        .HasForeignKey("VariantID");
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("ProductVariant");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.HistoryOder", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.Order", "Order")
+                        .WithMany("HistoryOder")
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Order", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Order_Item", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.Order", "Order")
+                        .WithMany("Order_Items")
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("my_cosmetic_store.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.PaymentMethod", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.User", "User")
+                        .WithMany("PaymentMethods")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("my_cosmetic_store.Models.Product", b =>
@@ -439,13 +670,34 @@ namespace my_cosmetic_store.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("my_cosmetic_store.Models.ProductVariant", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.Product", "Product")
+                        .WithMany("ProductVariants")
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("my_cosmetic_store.Models.Variant", "Variant")
+                        .WithMany()
+                        .HasForeignKey("VariantId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Variant");
+                });
+
             modelBuilder.Entity("my_cosmetic_store.Models.Product_Images", b =>
                 {
-                    b.HasOne("my_cosmetic_store.Models.Product", null)
+                    b.HasOne("my_cosmetic_store.Models.Product", "Product")
                         .WithMany("ProductImages")
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("my_cosmetic_store.Models.Brand", b =>
@@ -463,9 +715,28 @@ namespace my_cosmetic_store.Migrations
                     b.Navigation("Products");
                 });
 
+            modelBuilder.Entity("my_cosmetic_store.Models.Order", b =>
+                {
+                    b.Navigation("HistoryOder");
+
+                    b.Navigation("Order_Items");
+                });
+
             modelBuilder.Entity("my_cosmetic_store.Models.Product", b =>
                 {
                     b.Navigation("ProductImages");
+
+                    b.Navigation("ProductVariants");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.ProductVariant", b =>
+                {
+                    b.Navigation("Cart_Items");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.User", b =>
+                {
+                    b.Navigation("PaymentMethods");
                 });
 #pragma warning restore 612, 618
         }

@@ -37,6 +37,20 @@ namespace my_cosmetic_store.Controllers
                 return new MessageData { Data = ex.Message, Status = 0 };
             }
         }
+        [HttpGet("GetAllBrandAdmin")]
+        [Authorize(Roles = "1")]
+        public MessageData GetAllBrandAdmin()
+        {
+            try
+            {
+                var result = _brandService.GetAllBrandAdmin();
+                return new MessageData { Data = result, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return new MessageData { Data = ex.Message, Status = 0 };
+            }
+        }
 
         [HttpPost("CreateNewBrand")]
         [Authorize(Roles = "1")]
@@ -61,6 +75,21 @@ namespace my_cosmetic_store.Controllers
             try
             {
                 var newBrand = _brandService.GetBrandTop(number);
+                return new MessageData { Data = newBrand, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return new MessageData { Data = ex.Message, Status = 0 };
+            }
+        }
+
+        [HttpGet("Get-brand-id")]
+        [AllowAnonymous]
+        public MessageData GetBrandId(int id)
+        {
+            try
+            {
+                var newBrand = _brandService.GetBrandById(id);
                 return new MessageData { Data = newBrand, Status = 1 };
             }
             catch (Exception ex)

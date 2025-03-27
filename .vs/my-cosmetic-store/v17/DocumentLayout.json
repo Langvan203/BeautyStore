@@ -7,48 +7,24 @@
       "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\variant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\variant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\migrations\\20250315083553_fixdb_v3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:migrations\\20250315083553_fixdb_v3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\productvariant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\productvariant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\product_images.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\product_images.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\dtos\\request\\varianttypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:dtos\\request\\varianttypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\services\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:services\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\dtos\\response\\productinforresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:dtos\\response\\productinforresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\dtos\\request\\createnewbrandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:dtos\\request\\createnewbrandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\dtos\\request\\updatebrandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:dtos\\request\\updatebrandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\dtos\\request\\createnewproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:dtos\\request\\createnewproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,97 +34,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20250315083553_fixdb_v3.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Migrations\\20250315083553_fixdb_v3.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250315083553_fixdb_v3.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Migrations\\20250315083553_fixdb_v3.cs",
-              "RelativeToolTip": "Migrations\\20250315083553_fixdb_v3.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Variant.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Variant.cs",
+              "RelativeDocumentMoniker": "Models\\Variant.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Variant.cs",
+              "RelativeToolTip": "Models\\Variant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T11:48:50.339Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Product_Images.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Product_Images.cs",
-              "RelativeDocumentMoniker": "Models\\Product_Images.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Product_Images.cs",
-              "RelativeToolTip": "Models\\Product_Images.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:43:02.126Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Category.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "Models\\Category.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Category.cs",
-              "RelativeToolTip": "Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:37:41.983Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DatabaseContext.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\DatabaseContext.cs",
-              "RelativeDocumentMoniker": "Models\\DatabaseContext.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\DatabaseContext.cs",
-              "RelativeToolTip": "Models\\DatabaseContext.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAADwvyoAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:36:52.578Z",
+              "WhenOpened": "2025-03-27T08:02:26.915Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Product.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Models\\Product.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Product.cs",
-              "RelativeToolTip": "Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAUAAAAAAAAAA==",
+              "Title": "ProductVariant.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\ProductVariant.cs",
+              "RelativeDocumentMoniker": "Models\\ProductVariant.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\ProductVariant.cs",
+              "RelativeToolTip": "Models\\ProductVariant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:36:46.741Z",
+              "WhenOpened": "2025-03-27T08:01:49.105Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Brand.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Brand.cs",
-              "RelativeDocumentMoniker": "Models\\Brand.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Brand.cs",
-              "RelativeToolTip": "Models\\Brand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:36:17.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductInforResponse.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Response\\ProductInforResponse.cs",
-              "RelativeDocumentMoniker": "Dtos\\Response\\ProductInforResponse.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Response\\ProductInforResponse.cs",
-              "RelativeToolTip": "Dtos\\Response\\ProductInforResponse.cs",
+              "DocumentIndex": 3,
+              "Title": "Product_Images.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Product_Images.cs",
+              "RelativeDocumentMoniker": "Models\\Product_Images.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Product_Images.cs",
+              "RelativeToolTip": "Models\\Product_Images.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:30:27.046Z",
+              "WhenOpened": "2025-03-27T08:01:48.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateNewProductRequest.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Request\\CreateNewProductRequest.cs",
+              "RelativeDocumentMoniker": "Dtos\\Request\\CreateNewProductRequest.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Request\\CreateNewProductRequest.cs",
+              "RelativeToolTip": "Dtos\\Request\\CreateNewProductRequest.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA1wA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T07:55:03.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VariantTypeDto.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Request\\VariantTypeDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\Request\\VariantTypeDto.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Request\\VariantTypeDto.cs",
+              "RelativeToolTip": "Dtos\\Request\\VariantTypeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T07:57:14.711Z",
               "EditorCaption": ""
             },
             {
@@ -159,58 +113,9 @@
               "RelativeDocumentMoniker": "Services\\ProductService.cs",
               "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\ProductService.cs",
               "RelativeToolTip": "Services\\ProductService.cs",
-              "ViewState": "AgIAAMEAAAAAAAAAAAAswOgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwC8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T04:06:43.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BrandController.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Controllers\\BrandController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BrandController.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Controllers\\BrandController.cs",
-              "RelativeToolTip": "Controllers\\BrandController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAA3wE0AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T04:14:17.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UpdateBrandRequest.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Request\\UpdateBrandRequest.cs",
-              "RelativeDocumentMoniker": "Dtos\\Request\\UpdateBrandRequest.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Request\\UpdateBrandRequest.cs",
-              "RelativeToolTip": "Dtos\\Request\\UpdateBrandRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T04:11:26.272Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CreateNewBrandRequest.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Request\\CreateNewBrandRequest.cs",
-              "RelativeDocumentMoniker": "Dtos\\Request\\CreateNewBrandRequest.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Dtos\\Request\\CreateNewBrandRequest.cs",
-              "RelativeToolTip": "Dtos\\Request\\CreateNewBrandRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T04:10:34.253Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BrandService.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\BrandService.cs",
-              "RelativeDocumentMoniker": "Services\\BrandService.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\BrandService.cs",
-              "RelativeToolTip": "Services\\BrandService.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAwFkAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T04:03:39.511Z",
+              "WhenOpened": "2025-03-27T07:55:01.294Z",
               "EditorCaption": ""
             }
           ]

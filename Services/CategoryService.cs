@@ -57,7 +57,30 @@ namespace my_cosmetic_store.Services
                 return ex.Message;
             }
         }
+        public object GetAllCategoryAdmin()
+        {
+            return _categoryRepository.FindAll().Select(x => new
+            {
+                id = x.CategoryID,
+                name = x.Name,
+                description = x.Description,
+                thumbnail = x.thumbNail,
+            });
+        }
 
+        public object GetCategoryByID(int id)
+        {
+            try
+            {
+                return _categoryRepository.FindByCondition(x => x.CategoryID == id).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+       
         public object DeleteCategory(int CategoryID)
         {
             var findCartegory = _categoryRepository.FindByCondition(x => x.CategoryID == CategoryID).FirstOrDefault();

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -52,6 +52,8 @@ var apiOption = builder.Configuration.GetSection("ApiOptions").Get<ApiOptions>()
 builder.Services.AddSingleton(apiOption);
 
 
+
+
 builder.Services.AddAuthentication(option =>
 {
     option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -99,6 +101,7 @@ builder.Services.AddCors(x => {
         builder.AllowAnyHeader();
     });
 });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -109,7 +112,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors();
-
+app.UseRouting();
+app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.DefaultModelsExpandDepth(-1);

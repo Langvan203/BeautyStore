@@ -66,6 +66,7 @@ namespace my_cosmetic_store.Repository
                 throw;
             }
         }
+
         public bool DeleteByEntity(T entity)
         {
             try

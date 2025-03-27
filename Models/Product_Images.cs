@@ -9,5 +9,7 @@ namespace my_cosmetic_store.Models
         public string ImageUrl { get; set; }
         public int ProductID { get; set; }
         public int Is_primary { get; set; } = 0;
+
+        public Product Product { get; set; }
     }
 }

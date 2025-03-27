@@ -44,9 +44,19 @@ namespace my_cosmetic_store.Services
         {
             return _brandRepository.FindAll();
         }
+        public object GetAllBrandAdmin()
+        {
+            return _brandRepository.FindAll().Select(x => new
+            {
+                id = x.BrandID,
+                name = x.Name,
+                description = x.Description,
+                thumbnail = x.thumbNail,
+            });
+        }
         public object GetBrandById(int id)
         {
-            return _brandRepository.FindByCondition(x => x.BrandID == id);
+            return _brandRepository.FindByCondition(x => x.BrandID == id).FirstOrDefault();
         }
 
         public object DeleteBrand(int brandId)

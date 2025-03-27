@@ -12,5 +12,9 @@ namespace my_cosmetic_store.Models
         public string Phone { get; set; }
         public string? Address { get; set; }
         public int Role { get; set; } = 0;
+        public string? Avatar { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        public int Gender { get; set; } = 1;
+        public ICollection<PaymentMethod> PaymentMethods { get; set; }
     }
 }
