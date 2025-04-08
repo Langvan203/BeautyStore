@@ -33,7 +33,7 @@ namespace my_cosmetic_store.Repository
         }
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
         {
-            return Model.Where(expression).AsNoTracking();
+            return Model.Where(expression);
         }
 
         public async Task<int> CountByConditionAsync(Expression<Func<T, bool>> expression)

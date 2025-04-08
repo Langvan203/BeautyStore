@@ -35,11 +35,12 @@ namespace my_cosmetic_store.Services
             if (request.ThumbNail != null)
             {
                 var fileName = $"{Guid.NewGuid()}-{request.ThumbNail.FileName}";
-                using (var fileStream = File.Create(Path.Combine(_webHostEnvironment.WebRootPath + "\\images" + fileName)))
+                using (var filestream = File.Create(Path.Combine(_webHostEnvironment.WebRootPath + "\\images\\brands\\" + fileName)))
                 {
-                    request.ThumbNail.CopyTo(fileStream);
+                    request.ThumbNail.CopyTo(filestream);
+                    filestream.Flush();
                 }
-                newCategory.thumbNail = "\\images\\" + fileName;
+                newCategory.thumbNail = "\\images\\brands\\" + fileName;
             }
             _categoryRepository.Create(newCategory);
             _categoryRepository.SaveChange();

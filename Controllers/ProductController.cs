@@ -28,7 +28,7 @@ namespace my_cosmetic_store.Controllers
         {
             try
             {
-                // Kiểm tra phải có đúng 1 ảnh chính
+               
                 if (request.MainImageIndex < 0 || request.MainImageIndex >= request.Files.Count)
                 {
                     return new MessageData { Data = null, Des = "Chỉ số ảnh chính không hợp lệ." };

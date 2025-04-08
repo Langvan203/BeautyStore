@@ -27,6 +27,10 @@ namespace my_cosmetic_store.Services
                 .Include(o => o.Order_Items)
                     .ThenInclude(oi => oi.Product)
                     .ThenInclude(oi => oi.ProductImages)
+                .Include(o => o.Order_Items)
+                    .ThenInclude(x => x.Product)
+                    .ThenInclude(x => x.ProductVariants)
+                    .ThenInclude(x => x.Variant)
                 .Where(o => o.UserID == userId)
                 .OrderByDescending(o => o.OrderDate)
                 .ToList();
@@ -36,10 +40,14 @@ namespace my_cosmetic_store.Services
 
         public object GetOrderByIdAsync(int orderId, int userId)
         {
-            var order = _orderRepository.FindByCondition(x => x.OrderID == orderId && x.UserID == userId)
-                .Include(o => o.Order_Items)
-                    .ThenInclude(oi => oi.Product)
-                    .ThenInclude(oi => oi.ProductImages)
+                var order = _orderRepository.FindByCondition(x => x.OrderID == orderId && x.UserID == userId)
+                    .Include(o => o.Order_Items)
+                        .ThenInclude(oi => oi.Product)
+                        .ThenInclude(oi => oi.ProductImages)
+                    .Include(o => o.Order_Items)
+                        .ThenInclude(x => x.Product)
+                        .ThenInclude(x => x.ProductVariants)
+                        .ThenInclude(x => x.Variant)
                 .FirstOrDefault();
 
             if (order == null)
@@ -146,6 +154,7 @@ namespace my_cosmetic_store.Services
                 foreach (var item in order.Order_Items)
                 {
                     var product = item.Product;
+                    var variant = item.ProductVariant.Variant;
                     var mainImage = product.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault();
                     response.Items.Add(new OrderItemDetailDto
                     {
@@ -156,7 +165,9 @@ namespace my_cosmetic_store.Services
                         Discount = Convert.ToDouble(product.ProductDiscount),
                         Quantity = item.Quantity,
                         Price = item.Price,
-                        SubTotal = Convert.ToDecimal((item.Price * item.Quantity - (item.Price * item.Quantity * product.ProductDiscount)))
+                        SubTotal = Convert.ToDecimal(item.Price * item.Quantity - (item.Price * item.Quantity * (decimal)product.ProductDiscount / 100)),
+                        Variant = variant.VariantName,
+                        PriceOfVariant = item.PriceOfVariant,
                     });
                 }
             }
@@ -166,17 +177,156 @@ namespace my_cosmetic_store.Services
 
         public object GetAllOrderAdmin()
         {
-            return _orderRepository.FindAll().Select(x => new
+            var orderAll =  _orderRepository.FindAll().Include(x => x.User).Select(x => new
             {
-                id = x.OrderID,
+                orderid = x.OrderID,
                 date = x.OrderDate,
                 totalAmount = x.Total_Amount,
-                status = GetOrderStatusString(x.Status),
-                address = x.ShippingAdress,
+                status = x.Status,
                 phone = x.PhoneNumber,
-                receiverName = x.ReceiverName,
-                userId = x.UserID,
+                userx = x.User.UserName,
             }).ToList();
+            var getAllOrderAdmin = orderAll.Select(x => new
+            {
+                id = x.orderid,
+                date = x.date,
+                totalAmount = x.totalAmount,
+                status = GetOrderStatusString(x.status),
+                phone = x.phone,
+                userName = x.userx
+            }).ToList();
+            return getAllOrderAdmin;
+        }
+
+
+        public object CancelledOrderByUser(int orderId, int UserId)
+        {
+            var findOrder = _orderRepository.FindByCondition(x => x.OrderID == orderId && x.UserID == UserId).Include(x => x.HistoryOder).FirstOrDefault();
+            if (findOrder != null)
+            {
+                findOrder.Status = 6;
+                var newStatus = GetOrderStatusString(6);
+                var historyOrderFind = findOrder.HistoryOder.Where(x => x.Title.Equals(newStatus)).FirstOrDefault();
+                if (historyOrderFind == null)
+                {
+                    HistoryOder newHistory = new HistoryOder
+                    {
+                        OrderID = orderId,
+                        UpdatedDate = DateTime.UtcNow,
+                        Title = newStatus,
+                    };
+                    findOrder.HistoryOder.Add(newHistory);
+                }
+                _orderRepository.UpdateByEntity(findOrder);
+                return new
+                {
+                    timeLine = findOrder.HistoryOder.Select(x => new
+                    {
+                        Title = x.Title,
+                        date = x.UpdatedDate,
+                    }).ToList()
+                };
+            }
+            return null;
+        }
+
+        public object UpdateOrderStatus(int orderId, int status)
+        {
+            var findOrder = _orderRepository.FindByCondition(x => x.OrderID == orderId).Include(x => x.HistoryOder).FirstOrDefault();
+            if (findOrder != null)
+            {
+                findOrder.Status = status;
+                var newStatus = GetOrderStatusString(status);
+                var historyOrderFind = findOrder.HistoryOder.Where(x => x.Title.Equals(newStatus)).FirstOrDefault();
+                if(historyOrderFind == null)
+                {
+                    HistoryOder newHistory = new HistoryOder
+                    {
+                        OrderID = orderId,
+                        UpdatedDate = DateTime.UtcNow,
+                        Title = newStatus,
+                    };
+                    findOrder.HistoryOder.Add(newHistory);
+                }
+                _orderRepository.UpdateByEntity(findOrder);
+                return new
+                {
+                    timeLine = findOrder.HistoryOder.Select(x => new
+                    {
+                        Title = x.Title,
+                        date = x.UpdatedDate,
+                    }).ToList()
+                };
+            }
+            return null;
+        }
+
+        public object GetOrderHistory(int orderId)
+        {
+            var findOrder = _orderRepository.FindByCondition(x => x.OrderID == orderId)
+                                            .Include(x => x.Order_Items)
+                                                .ThenInclude(x => x.Product)
+                                                .ThenInclude(x => x.ProductVariants)
+                                                .ThenInclude(x => x.Variant)
+                                            .Include(x => x.Order_Items)
+                                                .ThenInclude(x => x.Product)
+                                                .ThenInclude(x => x.ProductImages)
+                                            .Include(x => x.HistoryOder)
+                                            .FirstOrDefault();
+            
+                
+            if (findOrder != null)
+            {
+                var InOrderItems = findOrder.Order_Items;
+                var timeLine = findOrder.HistoryOder;
+                List<ProductInOrderItem> productInOrderItems = new List<ProductInOrderItem>();
+                List<TimeLineOrder> timeLineOrder = new List<TimeLineOrder>();
+                foreach (var item in InOrderItems)
+                {
+                    var products = item.Product;
+                    ProductInOrderItem productInOrderItem = new ProductInOrderItem
+                    {
+                        id = products.ProductID,
+                        name = products.ProductName,
+                        price = item.PriceOfVariant,
+                        discount = products.ProductDiscount,
+                        finalPrice = item.Price,
+                        quantity = item.Quantity,
+                        image = products.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault(),
+                        variant = item.ProductVariant.Variant.VariantName,
+                    };
+                    productInOrderItems.Add(productInOrderItem);
+
+                }
+                foreach (var item in timeLine)
+                {
+                    TimeLineOrder timeLineOrder1 = new TimeLineOrder
+                    {
+                        status = GetOrderStatusString(findOrder.Status),
+                        date = item.UpdatedDate,
+                        description = item.Title
+                    };
+                    timeLineOrder.Add(timeLineOrder1);
+                }
+                return new
+                {
+                    id = orderId,
+                    date = findOrder.CreatedDate,
+                    status = GetOrderStatusString(findOrder.Status),
+                    statusCode = findOrder.Status,
+                    shippingMethod = findOrder.ShippingMethod,
+                    paymentMethod = findOrder.PaymentMethod,
+                    shippingAdress = findOrder.ShippingAdress,
+                    phoneNumber = findOrder.PhoneNumber,
+                    receiverName = findOrder.ReceiverName,
+                    items = productInOrderItems,
+                    subtotal = findOrder.Total_Amount,
+                    shipping = (findOrder.Total_Amount > 500000 ? 30000: 0),
+                    total = (findOrder.Total_Amount > 500000 ? findOrder.Total_Amount+30000 : findOrder.Total_Amount),
+                    timeLine = timeLineOrder
+                };
+            }
+            return null;
         }
 
         private string GetOrderStatusString(int status)
@@ -184,9 +334,11 @@ namespace my_cosmetic_store.Services
             return status switch
             {
                 1 => "Đang chờ xử lý",
-                2 => "Đang giao hàng",
-                3 => "Đã hoàn thành",
-                4 => "Đã hủy",
+                2 => "Đặt hàng thành công",
+                3 => "Đang giao hàng",
+                4 => "Đã giao hàng thành công",
+                5 => "Đã nhận",
+                6 => "Đã hủy",
                 _ => "Không xác định"
             };
         }

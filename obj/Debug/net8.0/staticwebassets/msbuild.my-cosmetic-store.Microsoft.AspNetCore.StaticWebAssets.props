@@ -1,41 +1,5 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\0120347e-9067-4b44-9319-916aa60c00d2-ảnh cv.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/0120347e-9067-4b44-9319-916aa60c00d2-ảnh cv.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>e9e7zpdy6e</Fingerprint>
-      <Integrity>DmVZRDqUFLjo4Id//VIPq3dpWDvMn5M+FRDLziABc2Y=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\0120347e-9067-4b44-9319-916aa60c00d2-ảnh cv.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\08cc8706-9698-4d96-b046-4a7d9c67dc04WIN_20250313_16_44_27_Pro.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/08cc8706-9698-4d96-b046-4a7d9c67dc04WIN_20250313_16_44_27_Pro.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wzrbefzuhs</Fingerprint>
-      <Integrity>hINl3jYRZ5Xj67znK/S2s4Dy/TBAa8cyFbJump9DvHE=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\08cc8706-9698-4d96-b046-4a7d9c67dc04WIN_20250313_16_44_27_Pro.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\170a4bc4-feb7-4130-bd79-0b3fb51f21c4anhnuochoalogo.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -54,114 +18,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\170a4bc4-feb7-4130-bd79-0b3fb51f21c4anhnuochoalogo.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\21a23612-efca-4401-a6dc-4ea1136403fc.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/21a23612-efca-4401-a6dc-4ea1136403fc.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>e9e7zpdy6e</Fingerprint>
-      <Integrity>DmVZRDqUFLjo4Id//VIPq3dpWDvMn5M+FRDLziABc2Y=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\21a23612-efca-4401-a6dc-4ea1136403fc.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\279d939a-782b-46e3-a0e3-34ef63aaa1c6.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/279d939a-782b-46e3-a0e3-34ef63aaa1c6.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>e9e7zpdy6e</Fingerprint>
-      <Integrity>DmVZRDqUFLjo4Id//VIPq3dpWDvMn5M+FRDLziABc2Y=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\279d939a-782b-46e3-a0e3-34ef63aaa1c6.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\3a8d9a56-1969-4ddd-bd7a-ac7653db755aWIN_20250313_16_44_27_Pro.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/3a8d9a56-1969-4ddd-bd7a-ac7653db755aWIN_20250313_16_44_27_Pro.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wzrbefzuhs</Fingerprint>
-      <Integrity>hINl3jYRZ5Xj67znK/S2s4Dy/TBAa8cyFbJump9DvHE=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\3a8d9a56-1969-4ddd-bd7a-ac7653db755aWIN_20250313_16_44_27_Pro.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\53d5d175-6215-46e8-b335-5c3f05ea7461WIN_20250306_12_12_34_Pro.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/53d5d175-6215-46e8-b335-5c3f05ea7461WIN_20250306_12_12_34_Pro.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wvp21fc29i</Fingerprint>
-      <Integrity>jGx9GvOdNVJGr8ICUkT4Cem4XL8UDu1zIOe1SUUBUBE=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\53d5d175-6215-46e8-b335-5c3f05ea7461WIN_20250306_12_12_34_Pro.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\591a474e-c2ea-4003-bcd0-05b6f25d0a9c.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/591a474e-c2ea-4003-bcd0-05b6f25d0a9c.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5zvz01f8fd</Fingerprint>
-      <Integrity>X9/0oAzhM4yvN+IuX3Kmt5en6D4dAsDoLpixI5NOJOk=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\591a474e-c2ea-4003-bcd0-05b6f25d0a9c.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\6c288e87-6373-47fa-98e4-c97683821dff-Ảnh huế Cua.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/6c288e87-6373-47fa-98e4-c97683821dff-Ảnh huế Cua.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5zvz01f8fd</Fingerprint>
-      <Integrity>X9/0oAzhM4yvN+IuX3Kmt5en6D4dAsDoLpixI5NOJOk=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\6c288e87-6373-47fa-98e4-c97683821dff-Ảnh huế Cua.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\7e1ce8f6-ace9-4721-8810-11ca1f1cf36eanhmyphamlogo.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -179,42 +35,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\7e1ce8f6-ace9-4721-8810-11ca1f1cf36eanhmyphamlogo.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\a02a8c69-5918-4e22-bae4-b2f8d1ee11baWIN_20250306_12_12_34_Pro.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/a02a8c69-5918-4e22-bae4-b2f8d1ee11baWIN_20250306_12_12_34_Pro.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wvp21fc29i</Fingerprint>
-      <Integrity>jGx9GvOdNVJGr8ICUkT4Cem4XL8UDu1zIOe1SUUBUBE=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\a02a8c69-5918-4e22-bae4-b2f8d1ee11baWIN_20250306_12_12_34_Pro.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\a6ae05ff-276f-4135-9512-4bb12d3c63d9WIN_20250306_12_12_34_Pro.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/a6ae05ff-276f-4135-9512-4bb12d3c63d9WIN_20250306_12_12_34_Pro.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wvp21fc29i</Fingerprint>
-      <Integrity>jGx9GvOdNVJGr8ICUkT4Cem4XL8UDu1zIOe1SUUBUBE=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\a6ae05ff-276f-4135-9512-4bb12d3c63d9WIN_20250306_12_12_34_Pro.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\0209b813-4d53-4ec8-bbc6-7f1df477d350-1671696426478-GAMMA-CHEMICALS.jpeg'))">
       <SourceType>Package</SourceType>
@@ -378,24 +198,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\62b6af56-19ab-4524-a152-e3fded64de05-1608015224539-3w.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\6d797dd3-f686-498e-bd80-88e38fad175c-1667357462599-thuong-hieu-16brand.jpeg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/brands/6d797dd3-f686-498e-bd80-88e38fad175c-1667357462599-thuong-hieu-16brand.jpeg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>tp3pj5xan3</Fingerprint>
-      <Integrity>72kvxBptsfCN7qZSRHW/cxGDwn6mXNgONe3hsErrq0I=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\6d797dd3-f686-498e-bd80-88e38fad175c-1667357462599-thuong-hieu-16brand.jpeg'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\6d79f79c-b73b-4754-b9f4-757598033567-1608015224539-3w.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -504,6 +306,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\af1f4cc4-ed42-4ec9-8d5c-8b2ffd665376-logo-9-wishes.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\fdfab7a9-53f9-4138-9687-4b1913d1ad96-1671696426478-GAMMA-CHEMICALS.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/brands/fdfab7a9-53f9-4138-9687-4b1913d1ad96-1671696426478-GAMMA-CHEMICALS.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gyl9306906</Fingerprint>
+      <Integrity>mKXJGm9uYFfwl4oKK05Dish29TnaBs80M5zFGScMdxI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brands\fdfab7a9-53f9-4138-9687-4b1913d1ad96-1671696426478-GAMMA-CHEMICALS.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\brandsb3735c75-4cd0-4efd-b2b8-49a09700e013-lorealbrandlogo.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -576,24 +396,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\cfc2598b-71a1-45c2-af07-34c7e7903c9canhchamsocdalogo.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\d03b2443-e866-4b21-8a48-cf8ea66d7796ảnh cv.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/d03b2443-e866-4b21-8a48-cf8ea66d7796ảnh cv.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>e9e7zpdy6e</Fingerprint>
-      <Integrity>DmVZRDqUFLjo4Id//VIPq3dpWDvMn5M+FRDLziABc2Y=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\d03b2443-e866-4b21-8a48-cf8ea66d7796ảnh cv.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\d250a1c6-843d-4afc-abe6-4b4232c68517anhchamsoctoclogo.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -611,24 +413,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\d250a1c6-843d-4afc-abe6-4b4232c68517anhchamsoctoclogo.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\e73709f9-dc13-411a-bbe6-95c6abb0e59c.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>my-cosmetic-store</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/my-cosmetic-store</BasePath>
-      <RelativePath>images/e73709f9-dc13-411a-bbe6-95c6abb0e59c.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zmhsem55qn</Fingerprint>
-      <Integrity>S76txZm7C4EYWBsw/hUqF6apQJWkHMQ9VXFkFGQ9RAQ=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\e73709f9-dc13-411a-bbe6-95c6abb0e59c.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\03cf2d06-bfc6-4363-bc3e-31e74bb71cd9.jpeg'))">
       <SourceType>Package</SourceType>
@@ -972,6 +756,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\3cb4a336-d837-4c43-8505-7ff5271f2e34.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\3cc43e64-0786-42a1-8be4-4592d3c448ba.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/3cc43e64-0786-42a1-8be4-4592d3c448ba.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tp3pj5xan3</Fingerprint>
+      <Integrity>72kvxBptsfCN7qZSRHW/cxGDwn6mXNgONe3hsErrq0I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\3cc43e64-0786-42a1-8be4-4592d3c448ba.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\40acb77b-f988-4cdf-8321-13e8f4ad4bdd.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -1116,6 +918,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\51d3b50e-977b-4a1f-9961-3e0b1896269e.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\52ea53f9-dbba-4e6b-9ff2-fb48f7e67bbe.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/52ea53f9-dbba-4e6b-9ff2-fb48f7e67bbe.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6hyj6lb03g</Fingerprint>
+      <Integrity>tuDfWDPTf7XTXahpnch/55CtPNqcg86HpuOHNABZtvM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\52ea53f9-dbba-4e6b-9ff2-fb48f7e67bbe.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\55ac9843-1e13-454a-992d-6403212b8854.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/55ac9843-1e13-454a-992d-6403212b8854.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gyl9306906</Fingerprint>
+      <Integrity>mKXJGm9uYFfwl4oKK05Dish29TnaBs80M5zFGScMdxI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\55ac9843-1e13-454a-992d-6403212b8854.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\565b256f-d464-4b7d-bd34-126732051439.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -1188,6 +1026,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\5b6b991c-5896-42a4-9f11-ee8b1d230aec.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\5d9d1f09-bf96-4247-87af-7055c07db141.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/5d9d1f09-bf96-4247-87af-7055c07db141.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>c8at52yytj</Fingerprint>
+      <Integrity>9BnY3n8mGSP1T7XvHuGJdHLL7EOqAXtzbdChENxSkFE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\5d9d1f09-bf96-4247-87af-7055c07db141.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\5f530c0b-e24c-4c4c-9cf7-1e249af838af.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -1205,6 +1061,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\5f530c0b-e24c-4c4c-9cf7-1e249af838af.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\60259a1c-95a5-4f91-8784-e7c10f32e3ad.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/60259a1c-95a5-4f91-8784-e7c10f32e3ad.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6hyj6lb03g</Fingerprint>
+      <Integrity>tuDfWDPTf7XTXahpnch/55CtPNqcg86HpuOHNABZtvM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\60259a1c-95a5-4f91-8784-e7c10f32e3ad.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\64ced5d4-7cdf-4ea4-9b66-eda5957c715f.jpg'))">
       <SourceType>Package</SourceType>
@@ -1242,6 +1116,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\65f5c99c-061a-47f2-98d6-b3ca330e7407.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\67c073c3-6b7b-4294-a194-fbd4e7d4ff66.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/67c073c3-6b7b-4294-a194-fbd4e7d4ff66.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>l429lmzuux</Fingerprint>
+      <Integrity>BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\67c073c3-6b7b-4294-a194-fbd4e7d4ff66.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\6c0b92f4-c5d9-4120-97cc-bc35fe4eb4cb.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -1260,6 +1152,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\6c0b92f4-c5d9-4120-97cc-bc35fe4eb4cb.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\6ceeb760-0942-4b85-8609-28a9054a44f9.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/6ceeb760-0942-4b85-8609-28a9054a44f9.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>l429lmzuux</Fingerprint>
+      <Integrity>BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\6ceeb760-0942-4b85-8609-28a9054a44f9.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\6d39f2e4-4d6c-48fa-b70e-bceb80aade0b.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -1277,6 +1187,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\6d39f2e4-4d6c-48fa-b70e-bceb80aade0b.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\6dbdcc41-091e-4fd8-8f59-56defcc8a6e6.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/6dbdcc41-091e-4fd8-8f59-56defcc8a6e6.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>o3vc0sxzts</Fingerprint>
+      <Integrity>jBfccpUPo+zqoO2diRP4Zw8odqwFe8CdHUZUKQNGOzs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\6dbdcc41-091e-4fd8-8f59-56defcc8a6e6.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\73b6efe9-6131-4705-8b20-2fae47c24c96.jpg'))">
       <SourceType>Package</SourceType>
@@ -1314,6 +1242,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\740430fa-7602-4c14-a956-c075c46f9303.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\78d611d0-8593-4868-b765-a9b1410bf5b0.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/78d611d0-8593-4868-b765-a9b1410bf5b0.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>l429lmzuux</Fingerprint>
+      <Integrity>BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\78d611d0-8593-4868-b765-a9b1410bf5b0.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\7c04dd8e-fb7c-4be4-97de-46f5841169be.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -1349,6 +1295,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\86bb2b65-552a-4617-91af-78fd21dfc607.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\87e89271-592d-4d6d-8814-964ec9ba2b3a.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/87e89271-592d-4d6d-8814-964ec9ba2b3a.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>l429lmzuux</Fingerprint>
+      <Integrity>BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\87e89271-592d-4d6d-8814-964ec9ba2b3a.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\8b1cd135-3b7f-4a53-89cd-7a2b0f241104.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/8b1cd135-3b7f-4a53-89cd-7a2b0f241104.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>a4c81ai9ey</Fingerprint>
+      <Integrity>WlhPj2Ku8J0Vic53OASaYm+GaBq4IZ4lw3FRKPrxLnw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\8b1cd135-3b7f-4a53-89cd-7a2b0f241104.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\8e28509e-9605-4f58-8d7c-d1f253462434.jpeg'))">
       <SourceType>Package</SourceType>
@@ -1548,6 +1530,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\a7343aa1-b8ea-49ae-9973-5519591075f2.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\aaa32751-0b5b-4119-9134-3196538fe451.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/aaa32751-0b5b-4119-9134-3196538fe451.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>c8at52yytj</Fingerprint>
+      <Integrity>9BnY3n8mGSP1T7XvHuGJdHLL7EOqAXtzbdChENxSkFE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\aaa32751-0b5b-4119-9134-3196538fe451.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\abef0a7e-7731-43c8-b2b4-199558acaed6.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -1565,6 +1565,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\abef0a7e-7731-43c8-b2b4-199558acaed6.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\af84acfd-ef34-4a6d-b681-898294d02e8e.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/af84acfd-ef34-4a6d-b681-898294d02e8e.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gyl9306906</Fingerprint>
+      <Integrity>mKXJGm9uYFfwl4oKK05Dish29TnaBs80M5zFGScMdxI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\af84acfd-ef34-4a6d-b681-898294d02e8e.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\b1ed32c9-fd5e-484b-82d9-8b2ade89dceb.jpg'))">
       <SourceType>Package</SourceType>
@@ -1656,6 +1674,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ba5a977e-b3a8-4e8e-a8a8-e4c4be6b24fc.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\c2197fab-f6fe-46ad-b3f5-f7207b6b7ec6.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/c2197fab-f6fe-46ad-b3f5-f7207b6b7ec6.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gyl9306906</Fingerprint>
+      <Integrity>mKXJGm9uYFfwl4oKK05Dish29TnaBs80M5zFGScMdxI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\c2197fab-f6fe-46ad-b3f5-f7207b6b7ec6.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\caa28ef2-3586-4fd4-b31b-d7c7b6065e1d.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -1692,6 +1728,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\cde492f8-8962-4f99-8276-f999118e818b.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\d3a14bad-014d-4df7-b8d9-016807c06ce8.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/d3a14bad-014d-4df7-b8d9-016807c06ce8.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>a4c81ai9ey</Fingerprint>
+      <Integrity>WlhPj2Ku8J0Vic53OASaYm+GaBq4IZ4lw3FRKPrxLnw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\d3a14bad-014d-4df7-b8d9-016807c06ce8.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\d5ea8c43-6e66-475d-94d7-6d49e4b3487d.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>
@@ -1727,6 +1781,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\d7e3f0fe-75ea-48c2-af81-7828bb74adbb.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\d7fc285f-9ac6-4901-a045-e5772c1adbb7.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/d7fc285f-9ac6-4901-a045-e5772c1adbb7.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>o3vc0sxzts</Fingerprint>
+      <Integrity>jBfccpUPo+zqoO2diRP4Zw8odqwFe8CdHUZUKQNGOzs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\d7fc285f-9ac6-4901-a045-e5772c1adbb7.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\d84e9d9f-f3e2-4fd3-8f57-6ea6d630efcf.jpg'))">
       <SourceType>Package</SourceType>
@@ -1961,6 +2033,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\f5a7ab29-3372-4552-8591-24803f34d183.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\f6ba0689-db9c-4537-a038-6df3879c8a30.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/f6ba0689-db9c-4537-a038-6df3879c8a30.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>a4c81ai9ey</Fingerprint>
+      <Integrity>WlhPj2Ku8J0Vic53OASaYm+GaBq4IZ4lw3FRKPrxLnw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\f6ba0689-db9c-4537-a038-6df3879c8a30.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\f7509837-a3a3-4808-8265-5705dd0cd98a.jpg'))">
       <SourceType>Package</SourceType>

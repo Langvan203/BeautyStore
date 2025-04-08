@@ -64,10 +64,11 @@ namespace my_cosmetic_store.Services
             var findBrand = _brandRepository.FindByCondition(x => x.BrandID == brandId).FirstOrDefault();
             if (findBrand != null)
             {
-                throw new Exception();
+                _brandRepository.DeleteByEntity(findBrand);
+                return findBrand;
             }
-            _brandRepository.DeleteByEntity(findBrand);
-            return findBrand;
+            return null;
+           
         }
 
         public object GetBrandTop(int number)
@@ -97,8 +98,8 @@ namespace my_cosmetic_store.Services
                         filestream.Flush();
                     }
                     findBrand.thumbNail = "\\images\\brands\\" + fileName;
-                    _brandRepository.UpdateByEntity(findBrand);
-                }    
+                }
+                _brandRepository.UpdateByEntity(findBrand);
                 return findBrand;
             }
             return null;

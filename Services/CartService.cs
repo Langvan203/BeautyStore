@@ -5,6 +5,7 @@ using my_cosmetic_store.Repository;
 using my_cosmetic_store.Utility;
 using my_cosmetic_store.Dtos.Response;
 using Microsoft.EntityFrameworkCore;
+using Azure;
 
 
 namespace my_cosmetic_store.Services
@@ -18,6 +19,8 @@ namespace my_cosmetic_store.Services
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly Cart_ItemRepository _cart_ItemRepository;
         private readonly VariantRepository _variantRepository;
+        private readonly ProductVariantRepository _productVariantRepository;
+        private readonly HistoryOrderRepository _historyOrderRepository;
         private readonly DatabaseContext _context;
 
         public CartService(ApiOptions apiOptions, DatabaseContext context, IMapper mapper, IWebHostEnvironment webHostEnvironment)
@@ -26,6 +29,8 @@ namespace my_cosmetic_store.Services
             _cart_ItemRepository = new Cart_ItemRepository(apiOptions, context, mapper);
             _productRepository = new ProductRepository(apiOptions, context, mapper);    
             _variantRepository = new VariantRepository(apiOptions, context, mapper);
+            _productVariantRepository = new ProductVariantRepository(apiOptions, context, mapper);
+            _historyOrderRepository = new HistoryOrderRepository(apiOptions, context, mapper);
             _apiOptions = apiOptions;
             _mapper = mapper;
             _webHostEnvironment = webHostEnvironment;
@@ -36,9 +41,11 @@ namespace my_cosmetic_store.Services
         {
             var cartFind = _cartRepository.FindByCondition(x => x.UserID == UserID && !x.IsCheckOut)
                 .Include(x => x.Cart_Items)
-                    .ThenInclude(x => x.ProductVariant)
                     .ThenInclude(x => x.Product)
                     .ThenInclude(x => x.ProductImages)
+                .Include(x => x.Cart_Items)
+                    .ThenInclude(x => x.ProductVariant)
+                    .ThenInclude(x => x.Variant)
                 .FirstOrDefault();
             if (cartFind == null)
             {
@@ -57,7 +64,8 @@ namespace my_cosmetic_store.Services
         {
             var cart = _cartRepository.FindByCondition(x => x.UserID == UserID && !x.IsCheckOut)
                 .Include(x => x.Cart_Items)
-                .FirstOrDefault();
+                    .ThenInclude(x => x.ProductVariant)
+                    .FirstOrDefault();
             if(cart == null)
             {
                 cart = new Cart
@@ -65,35 +73,50 @@ namespace my_cosmetic_store.Services
                     UserID = UserID,
                     Cart_Items = new List<Cart_Item>()
                 };
-                return cart;
+                _cartRepository.Create(cart);
             }
-            var product = _productRepository.FindByCondition(x => x.ProductID == request.ProductID).FirstOrDefault();
-            if (product == null)
-                throw new Exception("Khong tim thay san pham");
-            var existingItem = cart.Cart_Items.FirstOrDefault(x => x.ProductID == request.ProductID);
+            var existingItem = cart.Cart_Items.FirstOrDefault(x => x.ProductID == request.ProductID && x.ProductVariantId == request.VariantID);
+            var productDiscount = _productRepository.FindByCondition(x => x.ProductID == request.ProductID).FirstOrDefault().ProductDiscount;
             if (existingItem != null)
             {
-                existingItem.CartItemQuantity += request.Quantity;
-                _cart_ItemRepository.UpdateByEntity(existingItem);
+                if (existingItem.ProductVariantId == request.VariantID)
+                {
+                    existingItem.CartItemPrice += request.Quantity * (existingItem.ProductVariant.PriceOfVariant - (existingItem.ProductVariant.PriceOfVariant * (decimal)productDiscount / 100));
+                    existingItem.CartItemQuantity += request.Quantity;
+                    _cart_ItemRepository.UpdateByEntity(existingItem);
+                }
             }
             else
             {
-                var newCartItem = new Cart_Item
+                var findPriceForVariant = _productVariantRepository.FindByCondition(x => x.VariantId == request.VariantID && x.ProductID == request.ProductID).FirstOrDefault();
+                if (findPriceForVariant != null)
                 {
-                    CartID = cart.CartID,
-                    ProductID = request.ProductID,
-                    CartItemQuantity = request.Quantity,
-                    CartItemPrice = product.ProductPrice,
-                    VariantID = request.VariantID != 0 ? request.VariantID : 0,
-                };
-                cart.Cart_Items.Add(newCartItem);
-                _cartRepository.UpdateByEntity(cart);
+                    var newCartItem = new Cart_Item
+                    {
+                        CartID = cart.CartID,
+                        ProductID = request.ProductID,
+                        CartItemQuantity = request.Quantity,
+                        CartItemPrice = request.Quantity * (findPriceForVariant.PriceOfVariant - (findPriceForVariant.PriceOfVariant * (decimal)productDiscount / 100)),
+                        ProductVariantId = request.VariantID,
+                    };
+                    _cart_ItemRepository.Create(newCartItem);
+                    //_cartRepository.UpdateByEntity(cart);
+                }
+                else
+                {
+                    throw new Exception("Khong tim thay gia tri loai san pham");
+                }
             }
+
+            _cartRepository.SaveChange();
+
             cart = _cartRepository.FindByCondition(x => x.CartID == cart.CartID)
                 .Include(x => x.Cart_Items)
-                    .ThenInclude(x => x.ProductVariant)
                     .ThenInclude(x => x.Product)
                     .ThenInclude(x => x.ProductImages)
+                .Include(x => x.Cart_Items)
+                    .ThenInclude(x => x.ProductVariant)
+                    .ThenInclude(x => x.Variant)
                 .FirstOrDefault();
             return MapCartToCartResponseDto(cart);
         }
@@ -102,9 +125,6 @@ namespace my_cosmetic_store.Services
         {
             var cart = _cartRepository.FindByCondition(x => x.UserID == userId && !x.IsCheckOut)
                 .Include(x => x.Cart_Items)
-                    .ThenInclude(x => x.ProductVariant)
-                    .ThenInclude(x => x.Product)
-                    .ThenInclude(x => x.ProductImages)
                     .FirstOrDefault();
 
             if (cart == null)
@@ -130,10 +150,12 @@ namespace my_cosmetic_store.Services
 
             // Tải lại giỏ hàng
             cart = _cartRepository.FindByCondition(x => x.CartID == cart.CartID)
-                .Include(c => c.Cart_Items)
-                    .ThenInclude(x => x.ProductVariant)
+                .Include(x => x.Cart_Items)
                     .ThenInclude(x => x.Product)
                     .ThenInclude(x => x.ProductImages)
+                .Include(x => x.Cart_Items)
+                    .ThenInclude(x => x.ProductVariant)
+                    .ThenInclude(x => x.Variant)
                 .FirstOrDefault(c => c.CartID == cart.CartID);
 
             return MapCartToCartResponseDto(cart);
@@ -143,10 +165,7 @@ namespace my_cosmetic_store.Services
         {
             // Tìm giỏ hàng của người dùng
             var cart = _cartRepository.FindByCondition(x => x.UserID == userId && !x.IsCheckOut)
-                .Include(c => c.Cart_Items)
-                    .ThenInclude(x => x.ProductVariant)
-                    .ThenInclude(x => x.Product)
-                    .ThenInclude(x => x.ProductImages)
+                .Include(x => x.Cart_Items)
                 .FirstOrDefault();
 
             if (cart == null)
@@ -161,10 +180,12 @@ namespace my_cosmetic_store.Services
 
             // Tải lại giỏ hàng
             cart = _cartRepository.FindByCondition(x => x.CartID == cart.CartID)
-                .Include(c => c.Cart_Items)
-                    .ThenInclude(x => x.ProductVariant)
+               .Include(x => x.Cart_Items)
                     .ThenInclude(x => x.Product)
                     .ThenInclude(x => x.ProductImages)
+                .Include(x => x.Cart_Items)
+                    .ThenInclude(x => x.ProductVariant)
+                    .ThenInclude(x => x.Variant)
                 .FirstOrDefault();
 
             return MapCartToCartResponseDto(cart);
@@ -185,17 +206,26 @@ namespace my_cosmetic_store.Services
             {
                 // Tìm giỏ hàng hiện tại
                 var cart = _cartRepository.FindByCondition(x => x.UserID == userId && !x.IsCheckOut)
-                    .Include(c => c.Cart_Items)
+                    .Include(x => x.Cart_Items)
                         .ThenInclude(x => x.ProductVariant)
                         .ThenInclude(x => x.Product)
-                        .ThenInclude(x => x.ProductImages)
+                    .Include(x => x.Cart_Items)
+                        .ThenInclude(x => x.Product)
                     .FirstOrDefault();
 
                 if (cart == null || !cart.Cart_Items.Any())
                     throw new Exception("Giỏ hàng trống");
 
+
                 // Tính tổng tiền
-                decimal totalAmount = Convert.ToDecimal(cart.Cart_Items.Sum(ci => ci.CartItemPrice * ci.CartItemQuantity - (ci.CartItemPrice * ci.CartItemQuantity * ci.ProductVariant.Product.ProductDiscount)));
+                decimal totalAmount = 0;
+                foreach (var item in cart.Cart_Items)
+                {
+                    var productDiscount = item.ProductVariant.Product.ProductDiscount;
+                    var productVariant = item.ProductVariant;
+                    var subTotal = productVariant.PriceOfVariant * item.CartItemQuantity - (productVariant.PriceOfVariant * item.CartItemQuantity * (decimal)productDiscount / 100);
+                    totalAmount += subTotal;
+                }
 
                 // Tạo đơn hàng mới
                 var order = new Order
@@ -207,17 +237,22 @@ namespace my_cosmetic_store.Services
                     ReceiverName = checkoutDto.ReceiverName,
                     Status = 1, // Đang chờ xử lý
                     ShippingAdress = checkoutDto.ShippingAdress,
-                    Order_Items = new List<Order_Item>()
+                    Order_Items = new List<Order_Item>(),
+                    PaymentMethod = checkoutDto.PaymentMethod,
+                    ShippingMethod = checkoutDto.ShippingMethod,
                 };
 
                 // Thêm các sản phẩm vào đơn hàng
                 foreach (var item in cart.Cart_Items)
                 {
+                    // new
                     var orderItem = new Order_Item
                     {
                         ProductID = item.ProductID,
                         Quantity = item.CartItemQuantity,
-                        Price = item.CartItemPrice
+                        Price = item.ProductVariant.PriceOfVariant - (item.ProductVariant.PriceOfVariant * item.Product.ProductDiscount / 100),
+                        ProductVariantId = item.ProductVariant.VariantId,
+                        PriceOfVariant = item.ProductVariant.PriceOfVariant,
                     };
                     order.Order_Items.Add(orderItem);
                 }
@@ -227,6 +262,14 @@ namespace my_cosmetic_store.Services
                 // Đánh dấu giỏ hàng đã checkout
                 cart.IsCheckOut = true;
                 _cartRepository.UpdateByEntity(cart);
+
+                HistoryOder historyOder = new HistoryOder()
+                {
+                    OrderID = order.OrderID,
+                    Title = GetOrderStatusString(order.Status),
+                    UpdatedDate = DateTime.UtcNow,
+                };
+                _historyOrderRepository.Create(historyOder);
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
 
@@ -262,10 +305,10 @@ namespace my_cosmetic_store.Services
             {
                 foreach (var item in cart.Cart_Items)
                 {
-                    var product = item.ProductVariant.Product;
+                    var product = item.Product;
                     var mainImage = product.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault();
-                    var subTotal = item.CartItemPrice * item.CartItemQuantity - (item.CartItemPrice * item.CartItemQuantity * product.ProductDiscount);
-                    var productVariant = item.ProductVariant.Variant; 
+                    var productVariant = item.ProductVariant;
+                    var subTotal = productVariant.PriceOfVariant * item.CartItemQuantity - (productVariant.PriceOfVariant * item.CartItemQuantity * (decimal)product.ProductDiscount / 100);
                     response.Items.Add(new CartItemDetailResponse
                     {
                         Cart_ItemID = item.Cart_ItemID,
@@ -274,8 +317,8 @@ namespace my_cosmetic_store.Services
                         ProductImage = mainImage, // Giả sử Product có trường ImageUrl
                         Quantity = item.CartItemQuantity,
                         Discount = Convert.ToDouble(product.ProductDiscount),
-                        Price = item.CartItemPrice,
-                        Variant = productVariant.VariantName,
+                        Price = productVariant.PriceOfVariant,
+                        Variant = productVariant.Variant.VariantName,
                         SubTotal = Convert.ToDecimal(subTotal)
                     });
                     response.TotalPrice += Convert.ToDecimal(subTotal);
@@ -314,7 +357,7 @@ namespace my_cosmetic_store.Services
                         Quantity = item.Quantity,
                         Discount = Convert.ToDouble(product.ProductDiscount),
                         Price = item.Price,
-                        SubTotal = Convert.ToDecimal(item.Price * item.Quantity - (item.Price * item.Quantity * product.ProductDiscount))
+                        SubTotal = Convert.ToDecimal(item.Price * item.Quantity - (item.Price * item.Quantity * (decimal)product.ProductDiscount/100))
                     });
                 }
             }
@@ -326,9 +369,11 @@ namespace my_cosmetic_store.Services
             return status switch
             {
                 1 => "Đang chờ xử lý",
-                2 => "Đang giao hàng",
-                3 => "Đã hoàn thành",
-                4 => "Đã hủy",
+                2 => "Đặt hàng thành công",
+                3 => "Đang giao hàng",
+                4 => "Đã giao hàng thành công",
+                5 => "Đã nhận",
+                6 => "Đã hủy",
                 _ => "Không xác định"
             };
         }

@@ -43,7 +43,21 @@ namespace my_cosmetic_store.Services
             {
                 var checkBrand = _brandRepository.FindByCondition(x => x.BrandID == request.BrandID).FirstOrDefault();
                 var checkCategory = _categoryRepository.FindByCondition(x => x.CategoryID == request.CategoryID).FirstOrDefault();
-                var requestVariant = request.VariantTypes.Select(x => x.VariantID).ToList();
+                List<VariantTypeDto> variantTypes = new List<VariantTypeDto>();
+                if (!string.IsNullOrEmpty(request.VariantTypesJson))
+                {
+                    variantTypes = System.Text.Json.JsonSerializer.Deserialize<List<VariantTypeDto>>(request.VariantTypesJson);
+                }
+                else
+                {
+                    variantTypes = new List<VariantTypeDto>(); // Gán mặc định nếu không có dữ liệu
+                }
+                var requestVariant = variantTypes.Select(x => new
+                {
+                    variantid = x.VariantID,
+                    price = x.VariantPrice,
+                    stock = x.VariantStock
+                }).ToList();
                 var listVariant = _variantTypeRepository.FindAll().Select(x => x.VariantId).ToList();
                 if (checkBrand == null || checkCategory == null)
                 {
@@ -90,20 +104,25 @@ namespace my_cosmetic_store.Services
                     imageRecord.Add(productImage);
                 }
                 var listVariantProducts = new List<ProductVariant>();
-                for(int i = 0; i < requestVariant.Count; i++)
+                var listVariantAdd = requestVariant.Select(x => x.variantid).ToList();
+                var listPriceVariant = requestVariant.Select(x => x.price).ToList();
+                var listStockVariant = requestVariant.Select(x => x.stock).ToList();
+                for(int i = 0; i < variantTypes.Count; i++)
                 {
-                    if (listVariant.Contains(requestVariant[i]))
+                    if (listVariant.Contains(listVariantAdd[i]))
                     {
                         var newVariant = new ProductVariant
                         {
                             ProductID = newProduct.ProductID,
-                            VariantId = requestVariant[i],
+                            VariantId = listVariantAdd[i],
+                            PriceOfVariant = listPriceVariant[i],
+                            StockOfVariant = listStockVariant[i]
                         };
                         listVariantProducts.Add(newVariant);
                     }    
                 }    
                 _productImageRepository.AddRangeAsync(imageRecord);
-                
+                _productVariantRepository.AddRangeAsync(listVariantProducts);
                 newProduct.ProductImages = imageRecord;
                 newProduct.ProductVariants = listVariantProducts;
                 var product = _productRepository.FindByCondition(x => x.ProductID == newProduct.ProductID).Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).Select(x => new
@@ -119,7 +138,6 @@ namespace my_cosmetic_store.Services
                     productImages = x.ProductImages,
                     createdDate = x.CreatedDate.ToString(),
                     updatedDate = x.UpdatedDate.ToString(),
-                    productVariants = x.ProductVariants,
                 }).FirstOrDefault();
                 return product;
             }
@@ -130,7 +148,7 @@ namespace my_cosmetic_store.Services
         }
         public object GetAllProduct()
         {
-            var products = _productRepository.FindAll().Include(x => x.ProductImages).Select(x => new
+            var products = _productRepository.FindAll().Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).Select(x => new
             {
                 productID = x.ProductID,
                 productName = x.ProductName,
@@ -140,9 +158,17 @@ namespace my_cosmetic_store.Services
                 productPrice = x.ProductPrice,
                 productStock = x.ProductStock,
                 productDiscount = x.ProductDiscount,
-                productImages = x.ProductImages,
+                productImages = x.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault(),
                 createdDate = x.CreatedDate.ToString(),
                 updatedDate = x.UpdatedDate.ToString(),
+                variants = x.ProductVariants.Select(findProduct => new
+                {
+                    variantId = findProduct.Variant.VariantId,
+                    variantName = findProduct.Variant.VariantName,
+                    price = findProduct.PriceOfVariant,
+                    stock = findProduct.StockOfVariant
+
+                }).ToList(),
             }).ToList();
             return products;
         }
@@ -182,7 +208,10 @@ namespace my_cosmetic_store.Services
                         userManual = findProduct.ProductUserManual,
                         variants = findProduct.ProductVariants.Select(findProduct => new
                         {
-                            findProduct.VariantId,
+                            id = findProduct.VariantId,
+                            variantName = findProduct.Variant.VariantName,
+                            variantPrice = findProduct.PriceOfVariant,
+                            variantStock = findProduct.StockOfVariant
                         }).ToList(),
                         existingImages = findProduct.ProductImages.Select(x => new
                         {
@@ -231,7 +260,9 @@ namespace my_cosmetic_store.Services
                 variants = x.ProductVariants.Select(findProduct => new
                 {
                     variantId = findProduct.Variant.VariantId,
-                    variantName = findProduct.Variant.VariantName
+                    variantName = findProduct.Variant.VariantName,
+                    price = findProduct.PriceOfVariant,
+                    stock = findProduct.StockOfVariant
 
                 }).ToList(),
             }).FirstOrDefault();
@@ -240,28 +271,31 @@ namespace my_cosmetic_store.Services
 
         public object GetNewsetProductTop(int number)
         {
-            var products = _productRepository.FindAll().OrderBy(x => x.CreatedDate).Take(number).Include(x => x.ProductImages).ToList();
-            var productDTOs = products.Select(p => new ProductInforResponse
+            var products = _productRepository.FindAll().OrderBy(x => x.CreatedDate).Take(number).Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).ToList();
+            var productDTOs = products.Select(x => new
             {
-                ProductID = p.ProductID,
-                ProductName = p.ProductName,
-                ProductDescription = p.ProductDescription,
-                ProductPrice = p.ProductPrice,
-                ProductStock = p.ProductStock,
-                ProductDiscount = p.ProductDiscount,
-                ProductImages = p.ProductImages.Select(pi => new ProductImageResponse
+                productID = x.ProductID,
+                productName = x.ProductName,
+                productDescription = x.ProductDescription,
+                productPrice = x.ProductPrice,
+                productStock = x.ProductStock,
+                productDiscount = x.ProductDiscount,
+                productImages = x.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault(),
+                variants = x.ProductVariants.Select(findProduct => new
                 {
-                    ImageID = pi.ImageID,
-                    ImageUrl = pi.ImageUrl,
-                    Is_primary = pi.Is_primary
-                }).ToList()
+                    variantId = findProduct.Variant.VariantId,
+                    variantName = findProduct.Variant.VariantName,
+                    price = findProduct.PriceOfVariant,
+                    stock = findProduct.StockOfVariant
+
+                }).ToList(),
             }).ToList();
             return productDTOs;
         }
 
         public object GetProductByCategory(int categoryid)
         {
-            var products = _productRepository.FindByCondition(x => x.CategoryID == categoryid).Include(x => x.ProductImages).Select(x => new
+            var products = _productRepository.FindByCondition(x => x.CategoryID == categoryid).Include(x => x.ProductImages).Include(x => x.ProductVariants).Select(x => new
             {
                 productID = x.ProductID,
                 productName = x.ProductName,
@@ -476,32 +510,69 @@ namespace my_cosmetic_store.Services
             _productImageRepository.UpdateRange(allImages);
 
             // ### Xử lý variants ###
-            var requestVariant = request.VariantID.Split(',').Select(int.Parse).ToList();
+
+
+            List<VariantTypeDto> variantTypes = new List<VariantTypeDto>();
+            if (!string.IsNullOrEmpty(request.VariantID))
+            {
+                variantTypes = System.Text.Json.JsonSerializer.Deserialize<List<VariantTypeDto>>(request.VariantID);
+            }
+            else
+            {
+                variantTypes = new List<VariantTypeDto>(); // Gán mặc định nếu không có dữ liệu
+            }
+            var requestVariant = variantTypes.Select(x => new
+            {
+                variantid = x.VariantID,
+                price = x.VariantPrice,
+                stock = x.VariantStock
+            }).ToList();
+            var listKeepvariantId = requestVariant.Select(x => x.variantid).ToList();
+            var listPriceNewAdd = requestVariant.Select(x => x.price).ToList();
+            var listStockNewAdd = requestVariant.Select(x => x.stock).ToList();
             var currentVariants = findProduct.ProductVariants.Select(x => x.VariantId).ToList();
 
             // 1. Xóa variants không còn được chọn
-            var variantsToRemove = currentVariants.Except(requestVariant).ToList();
-            foreach (var variantId in variantsToRemove)
+            var variantsToRemove = currentVariants.Except(listKeepvariantId).ToList();
+            if(variantsToRemove.Count > 0)
             {
-                var pv = findProduct.ProductVariants.FirstOrDefault(pv => pv.VariantId == variantId);
-                if (pv != null)
+                foreach (var variantId in variantsToRemove)
                 {
-                    _productVariantRepository.DeleteByEntity(pv);
+                    var pv = findProduct.ProductVariants.FirstOrDefault(pv => pv.VariantId == variantId);
+                    if (pv != null)
+                    {
+                        _productVariantRepository.DeleteByEntity(pv);
+                    }
+                }
+            }    
+            // 2. Thêm variants mới
+            var variantsToAdd = listKeepvariantId.Except(currentVariants).ToList();
+            if (variantsToAdd.Count > 0)
+            {
+                for (int i = 0; i < variantsToAdd.Count; i++)
+                {
+                    var newVariant = new ProductVariant
+                    {
+                        ProductID = findProduct.ProductID,
+                        VariantId = variantsToAdd[i],
+                        PriceOfVariant = listPriceNewAdd[i],
+                        StockOfVariant = listStockNewAdd[i]
+                    };
+                    _productVariantRepository.Create(newVariant);
                 }
             }
-
-            // 2. Thêm variants mới
-            var variantsToAdd = requestVariant.Except(currentVariants).ToList();
-            foreach (var variantId in variantsToAdd)
+            //3. cập nhật lại giá và stock nếu không có variant mới được thêm hoặc bớt đi
+            var currentProductVariant = findProduct.ProductVariants;
+            for(int i = 0; i < listKeepvariantId.Count; i++)
             {
-                var newVariant = new ProductVariant
+                var findUpdateVariant = currentProductVariant.Where(x => x.VariantId == listKeepvariantId[i]).FirstOrDefault();
+                if(findUpdateVariant != null)
                 {
-                    ProductID = findProduct.ProductID,
-                    VariantId = variantId
-                };
-                _productVariantRepository.Create(newVariant);
-            }
-
+                   findUpdateVariant.PriceOfVariant = listPriceNewAdd[i];
+                    findUpdateVariant.StockOfVariant = listStockNewAdd[i];
+                    _productVariantRepository.UpdateByEntity(findUpdateVariant);
+                }    
+            }    
             // Cập nhật sản phẩm
             _productRepository.UpdateByEntity(findProduct);
             return new
@@ -513,7 +584,7 @@ namespace my_cosmetic_store.Services
 
         public object pagnationProductByCondition(int? categoryid,decimal? minPrice, decimal? maxPrice ,int page = 1, int pagesize = 12, string categories = null, string brands = null)
         {
-            var products = _productRepository.FindAll().AsQueryable();
+            var products = _productRepository.FindAll().Include(x => x.ProductVariants).ThenInclude(x => x.Variant).AsQueryable();
             if(categoryid != null)
             {
                 products = products.Where(p => p.CategoryID == categoryid);
@@ -551,9 +622,17 @@ namespace my_cosmetic_store.Services
                 productPrice = x.ProductPrice,
                 productStock = x.ProductStock,
                 productDiscount = x.ProductDiscount,
-                productImages = x.ProductImages,
+                productImages = x.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault(),
                 createdDate = x.CreatedDate.ToString(),
-                updatedDate = x.UpdatedDate.ToString()
+                updatedDate = x.UpdatedDate.ToString(),
+                variants = x.ProductVariants.Select(findProduct => new
+                {
+                    variantId = findProduct.Variant.VariantId,
+                    variantName = findProduct.Variant.VariantName,
+                    price = findProduct.PriceOfVariant,
+                    stock = findProduct.StockOfVariant
+
+                }).ToList(),
             }).Skip((page -1) * pagesize).Take(pagesize).ToList();
             return new
             {

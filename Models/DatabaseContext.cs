@@ -57,10 +57,14 @@ namespace my_cosmetic_store.Models
             modelBuilder.Entity<Order>().HasMany(p => p.HistoryOder).WithOne(c => c.Order).HasForeignKey(o => o.OrderID);
 
             modelBuilder.Entity<Cart_Item>()
-                        .HasOne(ci => ci.ProductVariant)
-                        .WithMany()  // Không định nghĩa navigation property từ ProductVariant về Cart_Item
-                        .HasForeignKey(ci => ci.VariantID)
-                        .IsRequired(false);
+                        .HasOne(p => p.ProductVariant)
+                        .WithMany()
+                        .HasForeignKey(p => new { p.ProductID, p.ProductVariantId })
+                        .HasPrincipalKey(pv => new { pv.ProductID, pv.VariantId });
+            modelBuilder.Entity<Order_Item>()
+                        .HasOne(p => p.ProductVariant)
+                        .WithMany().HasForeignKey(c => new {c.ProductID, c.ProductVariantId})
+                        .HasPrincipalKey(pv => new {pv.ProductID, pv.VariantId});
 
             modelBuilder.Entity<ProductVariant>().HasOne(p => p.Variant).WithMany().HasForeignKey(p => p.VariantId).OnDelete(DeleteBehavior.NoAction);
         }

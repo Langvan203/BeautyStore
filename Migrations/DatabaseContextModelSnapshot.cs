@@ -107,16 +107,11 @@ namespace my_cosmetic_store.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("VariantID")
-                        .HasColumnType("int");
-
                     b.HasKey("Cart_ItemID");
 
                     b.HasIndex("CartID");
 
-                    b.HasIndex("ProductVariantId");
-
-                    b.HasIndex("VariantID");
+                    b.HasIndex("ProductID", "ProductVariantId");
 
                     b.ToTable("cart_Items");
                 });
@@ -214,6 +209,9 @@ namespace my_cosmetic_store.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("PaymentMethod")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -223,6 +221,9 @@ namespace my_cosmetic_store.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ShippingAdress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShippingMethod")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
@@ -261,7 +262,13 @@ namespace my_cosmetic_store.Migrations
                     b.Property<decimal?>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<decimal>("PriceOfVariant")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductVariantId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -274,7 +281,7 @@ namespace my_cosmetic_store.Migrations
 
                     b.HasIndex("OrderID");
 
-                    b.HasIndex("ProductID");
+                    b.HasIndex("ProductID", "ProductVariantId");
 
                     b.ToTable("Order_Items");
                 });
@@ -419,8 +426,6 @@ namespace my_cosmetic_store.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductID");
 
                     b.HasIndex("VariantId");
 
@@ -586,15 +591,20 @@ namespace my_cosmetic_store.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("my_cosmetic_store.Models.ProductVariant", null)
-                        .WithMany("Cart_Items")
-                        .HasForeignKey("ProductVariantId");
+                    b.HasOne("my_cosmetic_store.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("my_cosmetic_store.Models.ProductVariant", "ProductVariant")
                         .WithMany()
-                        .HasForeignKey("VariantID");
+                        .HasForeignKey("ProductID", "ProductVariantId")
+                        .HasPrincipalKey("ProductID", "VariantId");
 
                     b.Navigation("Cart");
+
+                    b.Navigation("Product");
 
                     b.Navigation("ProductVariant");
                 });
@@ -635,9 +645,16 @@ namespace my_cosmetic_store.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("my_cosmetic_store.Models.ProductVariant", "ProductVariant")
+                        .WithMany()
+                        .HasForeignKey("ProductID", "ProductVariantId")
+                        .HasPrincipalKey("ProductID", "VariantId");
+
                     b.Navigation("Order");
 
                     b.Navigation("Product");
+
+                    b.Navigation("ProductVariant");
                 });
 
             modelBuilder.Entity("my_cosmetic_store.Models.PaymentMethod", b =>
@@ -727,11 +744,6 @@ namespace my_cosmetic_store.Migrations
                     b.Navigation("ProductImages");
 
                     b.Navigation("ProductVariants");
-                });
-
-            modelBuilder.Entity("my_cosmetic_store.Models.ProductVariant", b =>
-                {
-                    b.Navigation("Cart_Items");
                 });
 
             modelBuilder.Entity("my_cosmetic_store.Models.User", b =>

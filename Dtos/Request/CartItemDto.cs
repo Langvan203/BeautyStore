@@ -6,6 +6,6 @@
 
         public int Quantity { get; set; }
 
-        public int? VariantID { get; set; }
+        public int VariantID { get; set; }
     }
 }

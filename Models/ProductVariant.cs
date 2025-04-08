@@ -11,7 +11,6 @@ namespace my_cosmetic_store.Models
         public decimal PriceOfVariant { get; set; }
         public Product Product { get; set; }
         public int VariantId { get; set; }
-        public ICollection<Cart_Item> Cart_Items { get; set; }
         public Variant Variant { get; set; }
     }
 }

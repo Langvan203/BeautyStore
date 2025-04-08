@@ -77,7 +77,50 @@ namespace my_cosmetic_store.Controllers
             {
                 return NG(ex);
             }
+        }
 
+        [HttpGet("Get-Order-history")]
+        [AllowAnonymous]
+        public MessageData GetHistoryOrder(int orderId)
+        {
+            try
+            {
+                var orders = _orderService.GetOrderHistory(orderId);
+                return new MessageData { Data = orders, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+        [HttpPut("Update-order-status-admin")]
+        [Authorize(Roles ="1")]
+        public MessageData UpdatOrderStatusAdmin(int orderId, int status)
+        {
+            try
+            {
+                var orders = _orderService.UpdateOrderStatus(orderId, status);
+                return new MessageData { Data = orders, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+
+        [HttpPost("Cancelled-order")]
+        [AllowAnonymous]
+        public MessageData CancelledOrder(int orderId)
+        {
+            try
+            {
+                var orders = _orderService.CancelledOrderByUser(orderId, UserIDLogined);
+                return new MessageData { Data = orders, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
         }
     }
 }

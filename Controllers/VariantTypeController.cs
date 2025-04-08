@@ -33,5 +33,35 @@ namespace my_cosmetic_store.Controllers
                 return NG(ex);
             }
         }
+        [HttpPost("AddNewVariant")]
+        [Authorize(Roles = "1")]
+        public MessageData AddNewVariant(string variant)
+        {
+            try
+            {
+                var variantype = _variantTypeServices.AddNewVariant(variant);
+                return new MessageData { Data = variantype, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+        [HttpDelete("DeleteVariant")]
+        [Authorize(Roles = "1")]
+        public MessageData DeleteVariant(int variantId)
+        {
+            try
+            {
+                var variantype = _variantTypeServices.DeleteVariant(variantId);
+                return new MessageData { Data = variantype, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+
+
     }
 }

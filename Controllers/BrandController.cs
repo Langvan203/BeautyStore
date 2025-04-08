@@ -100,7 +100,7 @@ namespace my_cosmetic_store.Controllers
 
         [HttpPut("Update-brand")]
         [Authorize(Roles = "1")]
-        public MessageData UpdateBrand(UpdateBrandRequest request)
+        public MessageData UpdateBrand([FromForm]UpdateBrandRequest request)
         {
             try
             {
@@ -110,6 +110,21 @@ namespace my_cosmetic_store.Controllers
             catch (Exception ex)
             {
                 return new MessageData { Data = ex.Message, Status = 0 };
+            }
+        }
+
+        [HttpDelete("DeleteBrand")]
+        [Authorize(Roles = "1")]
+        public MessageData DeleteBrand(int id)
+        {
+            try
+            {
+                var deleteBrand = _brandService.DeleteBrand(id);
+                return new MessageData { Data = deleteBrand, Status = 1 };
+            }
+            catch(Exception ex)
+            {
+                return NG(ex);
             }
         }
 

@@ -79,6 +79,10 @@ namespace my_cosmetic_store.Services
                     Phone = request.Phone,
                     Email = request.Email,
                 };
+                if(request.Email == "admin@gmail.com")
+                {
+                    newUser.Role = 1;
+                }    
                 _userRepository.Create(newUser);
                 _userRepository.SaveChange();
                 return newUser;
@@ -155,7 +159,28 @@ namespace my_cosmetic_store.Services
             }).ToList();
         }
 
+        public object DeleteUser(int UserID)
+        {
+            var findUser = _userRepository.FindByCondition(x => x.UserID==UserID).FirstOrDefault();
+            if(findUser != null)
+            {
+                _userRepository.DeleteByEntity(findUser);
+                return findUser;
+            }
+            return null;
+        }
 
+        public object SetAdminRoleUser(int userId)
+        {
+            var findUser = _userRepository.FindByCondition(x => x.UserID == userId).FirstOrDefault();
+            if (findUser != null)
+            {
+                findUser.Role = 1;
+                _userRepository.UpdateByEntity(findUser);
+                return findUser;
+            }
+            return null;
+        }
 
     }
 }

@@ -12,7 +12,7 @@
         public string? ProductIngredient { get; set; }
         public string? ProductUserManual { get; set; }
         public List<IFormFile> Files { get; set; }
-        public List<VariantTypeDto> VariantTypes { get; set; }
+        public string VariantTypesJson { get; set; }
         public int MainImageIndex { get; set; }
     }
 }

@@ -13,6 +13,8 @@ namespace my_cosmetic_store.Models
         public string? ShippingAdress { get; set; }
         public string PhoneNumber { get; set; }
         public string ReceiverName { get; set; }
+        public string? PaymentMethod { get; set; }
+        public string? ShippingMethod { get; set; }
         public int UserID { get; set; }
         [ForeignKey("UserID")]
         public User User { get; set; }

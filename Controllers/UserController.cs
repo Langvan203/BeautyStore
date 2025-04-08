@@ -109,5 +109,35 @@ namespace my_cosmetic_store.Controllers
                 return NG(ex);
             }
         }
+
+        [HttpDelete("DeleteUser")]
+        [Authorize(Roles = "1")]
+        public MessageData GetAllUserAdmin(int UserID)
+        {
+            try
+            {
+                var res = _userAuthenticateService.DeleteUser(UserID);
+                return new MessageData { Data = res, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+
+        [HttpPost("SetAdminRole")]
+        [Authorize(Roles = "1")]
+        public MessageData SetAdminRole(int UserID)
+        {
+            try
+            {
+                var res = _userAuthenticateService.SetAdminRoleUser(UserID);
+                return new MessageData { Data = res, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
     }
 }
