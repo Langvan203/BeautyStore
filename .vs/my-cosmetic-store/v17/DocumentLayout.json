@@ -3,8 +3,72 @@
   "WorkspaceRootPath": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\controllers\\baseapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:controllers\\baseapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\utility\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:utility\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\services\\userauthenticateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:services\\userauthenticateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\services\\varianttypeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:services\\varianttypeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\utility\\apioptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:utility\\apioptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\utility\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:utility\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\repository\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:repository\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\repository\\connectionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:repository\\connectionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\repository\\brandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:repository\\brandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|solutionrelative:models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B510CDB-F5ED-4FE9-AD76-1BB1BEB46EE3}|my-cosmetic-store.csproj|b:\\webmypham\\back-end\\my-cosmetic-store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -22,15 +86,222 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Utility\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Utility\\ChatHub.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Utility\\ChatHub.cs",
+              "RelativeToolTip": "Utility\\ChatHub.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAowCMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T10:27:40.399Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Repository\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\BaseRepository.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Repository\\BaseRepository.cs",
+              "RelativeToolTip": "Repository\\BaseRepository.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAYwG0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T12:56:36.935Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BaseApiController.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Controllers\\BaseApiController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BaseApiController.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Controllers\\BaseApiController.cs",
+              "RelativeToolTip": "Controllers\\BaseApiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T12:01:23.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "FileUploadOperationFilter.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Utility\\FileUploadOperationFilter.cs",
+              "RelativeDocumentMoniker": "Utility\\FileUploadOperationFilter.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Utility\\FileUploadOperationFilter.cs",
+              "RelativeToolTip": "Utility\\FileUploadOperationFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T09:51:24.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T09:42:17.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "VariantTypeServices.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\VariantTypeServices.cs",
+              "RelativeDocumentMoniker": "Services\\VariantTypeServices.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\VariantTypeServices.cs",
+              "RelativeToolTip": "Services\\VariantTypeServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T09:42:16.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApiOptions.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Utility\\ApiOptions.cs",
+              "RelativeDocumentMoniker": "Utility\\ApiOptions.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Utility\\ApiOptions.cs",
+              "RelativeToolTip": "Utility\\ApiOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T09:41:03.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserAuthenticateService.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\UserAuthenticateService.cs",
+              "RelativeDocumentMoniker": "Services\\UserAuthenticateService.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\UserAuthenticateService.cs",
+              "RelativeToolTip": "Services\\UserAuthenticateService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwC8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T09:37:41.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Services\\ProductService.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\ProductService.cs",
+              "RelativeToolTip": "Services\\ProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T03:37:20.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T12:47:35.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ConnectionRepository.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Repository\\ConnectionRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ConnectionRepository.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Repository\\ConnectionRepository.cs",
+              "RelativeToolTip": "Repository\\ConnectionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T12:53:42.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "Models\\DatabaseContext.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\DatabaseContext.cs",
+              "RelativeToolTip": "Models\\DatabaseContext.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAABoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T12:52:53.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BrandRepository.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Repository\\BrandRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\BrandRepository.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Repository\\BrandRepository.cs",
+              "RelativeToolTip": "Repository\\BrandRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T12:54:01.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Message.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "Models\\Message.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Message.cs",
+              "RelativeToolTip": "Models\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T12:51:01.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Connection.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Connection.cs",
+              "RelativeDocumentMoniker": "Models\\Connection.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Models\\Connection.cs",
+              "RelativeToolTip": "Models\\Connection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T12:50:54.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MessageRepository.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Repository\\MessageRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\MessageRepository.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Repository\\MessageRepository.cs",
+              "RelativeToolTip": "Repository\\MessageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T12:54:58.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAYwCQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T03:37:12.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "appsettings.json",
               "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -38,25 +309,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-01T09:46:18.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T09:46:18.807Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserAuthenticateService.cs",
-              "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\UserAuthenticateService.cs",
-              "RelativeDocumentMoniker": "Services\\UserAuthenticateService.cs",
-              "ToolTip": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Services\\UserAuthenticateService.cs",
-              "RelativeToolTip": "Services\\UserAuthenticateService.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T09:37:41.604Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 18,
               "Title": "UserController.cs",
               "DocumentMoniker": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -64,8 +321,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAG8AAAAAAAAAAAAYwIUAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T09:37:08.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T09:37:08.138Z"
             }
           ]
         }

@@ -104,6 +104,19 @@ namespace my_cosmetic_store.Repository
         {
             Model.UpdateRange(collection);
         }
+        public async Task AddAsync(T entity)
+        {
+           await Context.AddAsync(entity);
+            SaveChange();
+            
+        }
+
+        public async Task<T> FindFirstOrDefaultAsync(Expression<Func<T, bool>> expression)
+        {
+            return await Model.FirstOrDefaultAsync(expression);
+        }
+
+
         
     }
 }

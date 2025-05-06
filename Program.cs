@@ -53,7 +53,7 @@ var apiOption = builder.Configuration.GetSection("ApiOptions").Get<ApiOptions>()
 builder.Services.AddSingleton(apiOption);
 
 
-
+builder.Services.AddSignalR();
 
 builder.Services.AddAuthentication(option =>
 {
@@ -129,6 +129,11 @@ app.UseSwaggerUI(c =>
     c.DocumentTitle = "BeautyStoreAPI";
     c.RoutePrefix = string.Empty;
 });
+
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapHub<ChatHub>("/chatHub");
+//});
 
 
 app.UseStaticFiles();

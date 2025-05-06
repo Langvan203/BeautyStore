@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NQEw4LR1qgYoFqNSTzAN6K8/DS7BwZzOA+EjcJI4OUA=",
+  "Hash": "aWfoJLWmJm3tYar4VbeimrsWPKCHiAha2hIJz785l4E=",
   "Source": "my-cosmetic-store",
   "BasePath": "_content/my-cosmetic-store",
   "Mode": "Default",
@@ -1991,6 +1991,27 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\c2197fab-f6fe-46ad-b3f5-f7207b6b7ec6.jpeg"
     },
     {
+      "Identity": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\c8c4b9ff-d563-4a56-b592-ed57d4c6cf1d.jpeg",
+      "SourceId": "my-cosmetic-store",
+      "SourceType": "Discovered",
+      "ContentRoot": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\",
+      "BasePath": "_content/my-cosmetic-store",
+      "RelativePath": "images/products/c8c4b9ff-d563-4a56-b592-ed57d4c6cf1d#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "l429lmzuux",
+      "Integrity": "BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\c8c4b9ff-d563-4a56-b592-ed57d4c6cf1d.jpeg"
+    },
+    {
       "Identity": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\caa28ef2-3586-4fd4-b31b-d7c7b6065e1d.jpeg",
       "SourceId": "my-cosmetic-store",
       "SourceType": "Discovered",
@@ -2157,6 +2178,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\db27c47e-20b9-43ce-a5aa-32d1395b2b93.jpeg"
+    },
+    {
+      "Identity": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\de8c2b8f-3258-449a-bd1b-72b0c7e7903b.jpeg",
+      "SourceId": "my-cosmetic-store",
+      "SourceType": "Discovered",
+      "ContentRoot": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\",
+      "BasePath": "_content/my-cosmetic-store",
+      "RelativePath": "images/products/de8c2b8f-3258-449a-bd1b-72b0c7e7903b#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gyl9306906",
+      "Integrity": "mKXJGm9uYFfwl4oKK05Dish29TnaBs80M5zFGScMdxI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\de8c2b8f-3258-449a-bd1b-72b0c7e7903b.jpeg"
     },
     {
       "Identity": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\de975644-2bc9-43b6-bc10-a3d05e3193f7.jpeg",
@@ -10226,6 +10268,88 @@
       ]
     },
     {
+      "Route": "images/products/c8c4b9ff-d563-4a56-b592-ed57d4c6cf1d.jpeg",
+      "AssetFile": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\c8c4b9ff-d563-4a56-b592-ed57d4c6cf1d.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 03:42:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/c8c4b9ff-d563-4a56-b592-ed57d4c6cf1d.l429lmzuux.jpeg",
+      "AssetFile": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\c8c4b9ff-d563-4a56-b592-ed57d4c6cf1d.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 03:42:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l429lmzuux"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/c8c4b9ff-d563-4a56-b592-ed57d4c6cf1d.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI="
+        }
+      ]
+    },
+    {
       "Route": "images/products/caa28ef2-3586-4fd4-b31b-d7c7b6065e1d.gyl9306906.jpeg",
       "AssetFile": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\caa28ef2-3586-4fd4-b31b-d7c7b6065e1d.jpeg",
       "Selectors": [],
@@ -10878,6 +11002,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/de8c2b8f-3258-449a-bd1b-72b0c7e7903b.gyl9306906.jpeg",
+      "AssetFile": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\de8c2b8f-3258-449a-bd1b-72b0c7e7903b.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11436"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mKXJGm9uYFfwl4oKK05Dish29TnaBs80M5zFGScMdxI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 03:42:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gyl9306906"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/de8c2b8f-3258-449a-bd1b-72b0c7e7903b.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mKXJGm9uYFfwl4oKK05Dish29TnaBs80M5zFGScMdxI="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/de8c2b8f-3258-449a-bd1b-72b0c7e7903b.jpeg",
+      "AssetFile": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\de8c2b8f-3258-449a-bd1b-72b0c7e7903b.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11436"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mKXJGm9uYFfwl4oKK05Dish29TnaBs80M5zFGScMdxI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 03:42:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mKXJGm9uYFfwl4oKK05Dish29TnaBs80M5zFGScMdxI="
         }
       ]
     },

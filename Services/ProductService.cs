@@ -125,7 +125,7 @@ namespace my_cosmetic_store.Services
                 _productVariantRepository.AddRangeAsync(listVariantProducts);
                 newProduct.ProductImages = imageRecord;
                 newProduct.ProductVariants = listVariantProducts;
-                var product = _productRepository.FindByCondition(x => x.ProductID == newProduct.ProductID).Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).Select(x => new
+                var product = _productRepository.FindByCondition(x => x.ProductID == newProduct.ProductID).Select(x => new
                 {
                     productID = x.ProductID,
                     productName = x.ProductName,
@@ -135,7 +135,6 @@ namespace my_cosmetic_store.Services
                     productPrice = x.ProductPrice,
                     productStock = x.ProductStock,
                     productDiscount = x.ProductDiscount,
-                    productImages = x.ProductImages,
                     createdDate = x.CreatedDate.ToString(),
                     updatedDate = x.UpdatedDate.ToString(),
                 }).FirstOrDefault();

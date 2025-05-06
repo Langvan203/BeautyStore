@@ -23,6 +23,8 @@ namespace my_cosmetic_store.Models
         public DbSet<HistoryOder> HistoryOder { get; set; }
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
         public DbSet<Variant> Variants { get; set; }
+        public DbSet<Connection> Connections { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
