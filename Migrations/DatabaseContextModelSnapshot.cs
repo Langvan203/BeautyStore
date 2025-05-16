@@ -98,6 +98,9 @@ namespace my_cosmetic_store.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("ProductColorId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
 
@@ -110,6 +113,8 @@ namespace my_cosmetic_store.Migrations
                     b.HasKey("Cart_ItemID");
 
                     b.HasIndex("CartID");
+
+                    b.HasIndex("ProductID", "ProductColorId");
 
                     b.HasIndex("ProductID", "ProductVariantId");
 
@@ -171,6 +176,51 @@ namespace my_cosmetic_store.Migrations
                     b.ToTable("ChildrenCategories");
                 });
 
+            modelBuilder.Entity("my_cosmetic_store.Models.Color", b =>
+                {
+                    b.Property<int>("ColorID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ColorID"));
+
+                    b.Property<string>("ColorHexaValue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ColorName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("StockOfColor")
+                        .HasColumnType("int");
+
+                    b.HasKey("ColorID");
+
+                    b.ToTable("Colors");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Connection", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ConnectionId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Connections");
+                });
+
             modelBuilder.Entity("my_cosmetic_store.Models.HistoryOder", b =>
                 {
                     b.Property<int>("Id")
@@ -193,6 +243,34 @@ namespace my_cosmetic_store.Migrations
                     b.HasIndex("OrderID");
 
                     b.ToTable("HistoryOder");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceiverId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SenderId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("my_cosmetic_store.Models.Order", b =>
@@ -265,6 +343,9 @@ namespace my_cosmetic_store.Migrations
                     b.Property<decimal>("PriceOfVariant")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int?>("ProductColorId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
 
@@ -280,6 +361,8 @@ namespace my_cosmetic_store.Migrations
                     b.HasKey("OrderItemID");
 
                     b.HasIndex("OrderID");
+
+                    b.HasIndex("ProductID", "ProductColorId");
 
                     b.HasIndex("ProductID", "ProductVariantId");
 
@@ -403,6 +486,30 @@ namespace my_cosmetic_store.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.ProductColor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ColorID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StockOfColor")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ColorID");
+
+                    b.ToTable("Product_Colors");
                 });
 
             modelBuilder.Entity("my_cosmetic_store.Models.ProductVariant", b =>
@@ -597,6 +704,11 @@ namespace my_cosmetic_store.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("my_cosmetic_store.Models.ProductColor", "ProductColor")
+                        .WithMany()
+                        .HasForeignKey("ProductID", "ProductColorId")
+                        .HasPrincipalKey("ProductID", "ColorID");
+
                     b.HasOne("my_cosmetic_store.Models.ProductVariant", "ProductVariant")
                         .WithMany()
                         .HasForeignKey("ProductID", "ProductVariantId")
@@ -605,6 +717,8 @@ namespace my_cosmetic_store.Migrations
                     b.Navigation("Cart");
 
                     b.Navigation("Product");
+
+                    b.Navigation("ProductColor");
 
                     b.Navigation("ProductVariant");
                 });
@@ -645,6 +759,11 @@ namespace my_cosmetic_store.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("my_cosmetic_store.Models.ProductColor", "ProductColor")
+                        .WithMany()
+                        .HasForeignKey("ProductID", "ProductColorId")
+                        .HasPrincipalKey("ProductID", "ColorID");
+
                     b.HasOne("my_cosmetic_store.Models.ProductVariant", "ProductVariant")
                         .WithMany()
                         .HasForeignKey("ProductID", "ProductVariantId")
@@ -653,6 +772,8 @@ namespace my_cosmetic_store.Migrations
                     b.Navigation("Order");
 
                     b.Navigation("Product");
+
+                    b.Navigation("ProductColor");
 
                     b.Navigation("ProductVariant");
                 });
@@ -685,6 +806,25 @@ namespace my_cosmetic_store.Migrations
                     b.Navigation("Brand");
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("my_cosmetic_store.Models.ProductColor", b =>
+                {
+                    b.HasOne("my_cosmetic_store.Models.Color", "Color")
+                        .WithMany()
+                        .HasForeignKey("ColorID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("my_cosmetic_store.Models.Product", "Product")
+                        .WithMany("ProductColors")
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Color");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("my_cosmetic_store.Models.ProductVariant", b =>
@@ -741,6 +881,8 @@ namespace my_cosmetic_store.Migrations
 
             modelBuilder.Entity("my_cosmetic_store.Models.Product", b =>
                 {
+                    b.Navigation("ProductColors");
+
                     b.Navigation("ProductImages");
 
                     b.Navigation("ProductVariants");

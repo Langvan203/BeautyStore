@@ -13,6 +13,7 @@
         public List<IFormFile>? Files { get; set; }
         public int MainImageIndex { get; set; }
         public string VariantID { get; set; }
+        public string ColorID { get; set; }
         public string ExistingImageIdsToKeep { get; set; }
 
     }

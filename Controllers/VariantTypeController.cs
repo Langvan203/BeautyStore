@@ -20,7 +20,7 @@ namespace my_cosmetic_store.Controllers
             _variantTypeServices = new VariantTypeServices(apiOptions, context, mapper, webHost);
         }
         [HttpGet("Get-all-variantype-admin")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public MessageData GetAllVariantypeAdmin()
         {
             try
@@ -34,7 +34,7 @@ namespace my_cosmetic_store.Controllers
             }
         }
         [HttpPost("AddNewVariant")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public MessageData AddNewVariant(string variant)
         {
             try
@@ -48,7 +48,7 @@ namespace my_cosmetic_store.Controllers
             }
         }
         [HttpDelete("DeleteVariant")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public MessageData DeleteVariant(int variantId)
         {
             try

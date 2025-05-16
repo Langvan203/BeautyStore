@@ -31,6 +31,10 @@ namespace my_cosmetic_store.Services
                     .ThenInclude(x => x.Product)
                     .ThenInclude(x => x.ProductVariants)
                     .ThenInclude(x => x.Variant)
+                .Include(o => o.Order_Items)
+                    .ThenInclude(x => x.Product)
+                    .ThenInclude(x => x.ProductColors)
+                    .ThenInclude(x => x.Color)
                 .Where(o => o.UserID == userId)
                 .OrderByDescending(o => o.OrderDate)
                 .ToList();
@@ -48,6 +52,10 @@ namespace my_cosmetic_store.Services
                         .ThenInclude(x => x.Product)
                         .ThenInclude(x => x.ProductVariants)
                         .ThenInclude(x => x.Variant)
+                    .Include(o => o.Order_Items)
+                        .ThenInclude(x => x.Product)
+                        .ThenInclude(x => x.ProductColors)
+                        .ThenInclude(x => x.Color)
                 .FirstOrDefault();
 
             if (order == null)
@@ -155,6 +163,7 @@ namespace my_cosmetic_store.Services
                 {
                     var product = item.Product;
                     var variant = item.ProductVariant.Variant;
+                    var color = item.ProductColor.Color;
                     var mainImage = product.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault();
                     response.Items.Add(new OrderItemDetailDto
                     {
@@ -168,6 +177,8 @@ namespace my_cosmetic_store.Services
                         SubTotal = Convert.ToDecimal(item.Price * item.Quantity - (item.Price * item.Quantity * (decimal)product.ProductDiscount / 100)),
                         Variant = variant.VariantName,
                         PriceOfVariant = item.PriceOfVariant,
+                        ColorName = color.ColorName,
+                        ColorCode = color.ColorHexaValue
                     });
                 }
             }
@@ -271,6 +282,10 @@ namespace my_cosmetic_store.Services
                                             .Include(x => x.Order_Items)
                                                 .ThenInclude(x => x.Product)
                                                 .ThenInclude(x => x.ProductImages)
+                                            .Include(o => o.Order_Items)
+                                                .ThenInclude(x => x.Product)
+                                                .ThenInclude(x => x.ProductColors)
+                                                .ThenInclude(x => x.Color)
                                             .Include(x => x.HistoryOder)
                                             .FirstOrDefault();
             
@@ -294,6 +309,8 @@ namespace my_cosmetic_store.Services
                         quantity = item.Quantity,
                         image = products.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault(),
                         variant = item.ProductVariant.Variant.VariantName,
+                        ColorName = item.ProductColor.Color.ColorName,
+                        ColorCode = item.ProductColor.Color.ColorHexaValue
                     };
                     productInOrderItems.Add(productInOrderItem);
 

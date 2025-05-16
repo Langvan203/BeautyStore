@@ -100,19 +100,8 @@ namespace my_cosmetic_store.Services
                 findUser.UserName = userUpdate.UserName;
                 findUser.Phone = userUpdate.Phone;
                 findUser.UpdatedDate = DateTime.Now;
-                findUser.Email = userUpdate.Email;
-                findUser.Password = UltilityFunction.CreateMD5(userUpdate.Password);
                 findUser.DateOfBirth = userUpdate.DateOfBirth;
-                if (userUpdate.Avatar != null)
-                {
-                    var fileName = $"{Guid.NewGuid()}-{userUpdate.Avatar.FileName}";
-                    using (var filestream = File.Create(Path.Combine(_webHostEnvironment.WebRootPath + "\\images\\users\\" + fileName)))
-                    {
-                        userUpdate.Avatar.CopyTo(filestream);
-                        filestream.Flush();
-                    }
-                    findUser.Avatar = "\\images\\users\\" + fileName;
-                }
+                findUser.Gender = userUpdate.Gender;
                 _userRepository.UpdateByEntity(findUser);
                 return findUser;
             }
@@ -153,7 +142,9 @@ namespace my_cosmetic_store.Services
                 phone = x.Phone,
                 address = x.Address,
                 avatar = x.Avatar,
-                role = x.Role == 1 ? "Admin" : "Customer",
+                role = x.Role == 0 ? "Customer"
+                : x.Role == 1 ? "Admin"
+                : "Staff",
                 dateOfBirth = x.DateOfBirth,
                 gender = x.Gender == 1 ? "Nam" : "Nữ",
             }).ToList();
@@ -181,6 +172,27 @@ namespace my_cosmetic_store.Services
             }
             return null;
         }
-
+        public object SetStaffRole(int userId)
+        {
+            var findUser = _userRepository.FindByCondition(x => x.UserID == userId).FirstOrDefault();
+            if (findUser != null)
+            {
+                findUser.Role = 2;
+                _userRepository.UpdateByEntity(findUser);
+                return findUser;
+            }
+            return null;
+        }
+        public object SetCustomerRole(int userId)
+        {
+            var findUser = _userRepository.FindByCondition(x => x.UserID == userId).FirstOrDefault();
+            if (findUser != null)
+            {
+                findUser.Role = 0;
+                _userRepository.UpdateByEntity(findUser);
+                return findUser;
+            }
+            return null;
+        }
     }
 }

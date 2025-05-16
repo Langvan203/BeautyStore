@@ -13,6 +13,8 @@ namespace my_cosmetic_store.Dtos.Response
         public decimal? Price { get; set; }
         public decimal SubTotal { get; set; }
         public string Variant { get; set; }
+        public string ColorName { get; set; }
+        public string ColorCode { get; set; }
         public decimal PriceOfVariant { get; set; }
     }
 }

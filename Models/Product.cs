@@ -19,5 +19,6 @@ namespace my_cosmetic_store.Models
         public string? ProductUserManual { get; set; }
         public ICollection<Product_Images> ProductImages { get; set; }
         public ICollection<ProductVariant> ProductVariants { get; set; }
+        public ICollection<ProductColor> ProductColors { get; set; }
     }
 }

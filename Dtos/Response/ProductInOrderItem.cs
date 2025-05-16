@@ -10,5 +10,7 @@
         public int quantity { get; set; }   
         public string image { get; set; }
         public string variant { get; set; }
+        public string ColorName { get; set; }
+        public string ColorCode { get; set; }
     }
 }

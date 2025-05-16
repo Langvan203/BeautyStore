@@ -53,7 +53,7 @@ namespace my_cosmetic_store.Controllers
         [HttpPut]
         [Route("UpdateUserInfor")]
         [Authorize]
-        public MessageData UpdateUserInfor([FromForm]UpdateUserInfor request)
+        public MessageData UpdateUserInfor([FromBody] UpdateUserInfor request)
         {
             try
             {
@@ -112,7 +112,7 @@ namespace my_cosmetic_store.Controllers
 
         [HttpDelete("DeleteUser")]
         [Authorize(Roles = "1")]
-        public MessageData GetAllUserAdmin(int UserID)
+        public MessageData DeleteUser(int UserID)
         {
             try
             {
@@ -132,6 +132,36 @@ namespace my_cosmetic_store.Controllers
             try
             {
                 var res = _userAuthenticateService.SetAdminRoleUser(UserID);
+                return new MessageData { Data = res, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+
+        [HttpPost("SetStaffRole")]
+        [Authorize(Roles = "1")]
+        public MessageData SetStaffRole(int UserID)
+        {
+            try
+            {
+                var res = _userAuthenticateService.SetStaffRole(UserID);
+                return new MessageData { Data = res, Status = 1 };
+            }
+            catch (Exception ex)
+            {
+                return NG(ex);
+            }
+        }
+
+        [HttpPost("SetCustomerRole")]
+        [Authorize(Roles = "1")]
+        public MessageData SetCustomerRole(int UserID)
+        {
+            try
+            {
+                var res = _userAuthenticateService.SetCustomerRole(UserID);
                 return new MessageData { Data = res, Status = 1 };
             }
             catch (Exception ex)

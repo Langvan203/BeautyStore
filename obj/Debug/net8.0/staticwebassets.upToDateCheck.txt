@@ -71,6 +71,7 @@ wwwroot\images\products\78d611d0-8593-4868-b765-a9b1410bf5b0.jpeg
 wwwroot\images\products\7c04dd8e-fb7c-4be4-97de-46f5841169be.jpeg
 wwwroot\images\products\86bb2b65-552a-4617-91af-78fd21dfc607.jpg
 wwwroot\images\products\87e89271-592d-4d6d-8814-964ec9ba2b3a.jpeg
+wwwroot\images\products\891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg
 wwwroot\images\products\8b1cd135-3b7f-4a53-89cd-7a2b0f241104.jpeg
 wwwroot\images\products\8e28509e-9605-4f58-8d7c-d1f253462434.jpeg
 wwwroot\images\products\90595144-1f16-4271-bc1d-60cf54d23ac8.jpg

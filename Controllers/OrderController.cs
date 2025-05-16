@@ -35,7 +35,7 @@ namespace my_cosmetic_store.Controllers
             }
         }
         [HttpGet("GetAllOrderAdmin")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public MessageData GetAllOrderAdmin()
         {
             try
@@ -94,7 +94,7 @@ namespace my_cosmetic_store.Controllers
             }
         }
         [HttpPut("Update-order-status-admin")]
-        [Authorize(Roles ="1")]
+        [Authorize(Roles ="1,2")]
         public MessageData UpdatOrderStatusAdmin(int orderId, int status)
         {
             try

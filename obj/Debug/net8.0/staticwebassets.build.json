@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aWfoJLWmJm3tYar4VbeimrsWPKCHiAha2hIJz785l4E=",
+  "Hash": "xhk+hc1+xrfV0F2IqU0U4eAWDrMbURsHH0sL9p/enxE=",
   "Source": "my-cosmetic-store",
   "BasePath": "_content/my-cosmetic-store",
   "Mode": "Default",
@@ -1548,6 +1548,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\87e89271-592d-4d6d-8814-964ec9ba2b3a.jpeg"
+    },
+    {
+      "Identity": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg",
+      "SourceId": "my-cosmetic-store",
+      "SourceType": "Discovered",
+      "ContentRoot": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\",
+      "BasePath": "_content/my-cosmetic-store",
+      "RelativePath": "images/products/891adb32-40bc-460b-a1d4-7d12fb40cd5a#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a4c81ai9ey",
+      "Integrity": "WlhPj2Ku8J0Vic53OASaYm+GaBq4IZ4lw3FRKPrxLnw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg"
     },
     {
       "Identity": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\8b1cd135-3b7f-4a53-89cd-7a2b0f241104.jpeg",
@@ -8542,6 +8563,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-BXCXmUY6cOcRIViN53Pl3X/UpLuppsetX6MFVexgqVI="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/891adb32-40bc-460b-a1d4-7d12fb40cd5a.a4c81ai9ey.jpeg",
+      "AssetFile": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16687"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WlhPj2Ku8J0Vic53OASaYm+GaBq4IZ4lw3FRKPrxLnw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 10:50:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a4c81ai9ey"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WlhPj2Ku8J0Vic53OASaYm+GaBq4IZ4lw3FRKPrxLnw="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg",
+      "AssetFile": "B:\\WebMyPham\\Back-end\\my-cosmetic-store\\wwwroot\\images\\products\\891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16687"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WlhPj2Ku8J0Vic53OASaYm+GaBq4IZ4lw3FRKPrxLnw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 10:50:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WlhPj2Ku8J0Vic53OASaYm+GaBq4IZ4lw3FRKPrxLnw="
         }
       ]
     },

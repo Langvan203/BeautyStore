@@ -19,6 +19,7 @@ namespace my_cosmetic_store.Mapper
             CreateMap<CreateNewPaymentMethod, PaymentMethod>();
             // Create response mapping
             CreateMap<Cart, CartResponseDto>();
+            CreateMap<ColorDto, Color>();
         }
     }
 }

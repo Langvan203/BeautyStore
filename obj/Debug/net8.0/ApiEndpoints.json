@@ -534,6 +534,78 @@
     ]
   },
   {
+    "ContainingType": "my_cosmetic_store.Controllers.ColorController",
+    "Method": "AddNewColor",
+    "RelativePath": "api/Color/AddNewColor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Color",
+        "Type": "my_cosmetic_store.Dtos.Request.ColorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "my_cosmetic_store.Utility.MessageData",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "my_cosmetic_store.Controllers.ColorController",
+    "Method": "DeleteColor",
+    "RelativePath": "api/Color/DeleteColor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ColorId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "my_cosmetic_store.Utility.MessageData",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "my_cosmetic_store.Controllers.ColorController",
+    "Method": "GetAllColorAdmin",
+    "RelativePath": "api/Color/Get-all-color-admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "my_cosmetic_store.Utility.MessageData",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "my_cosmetic_store.Controllers.OrderController",
     "Method": "CancelledOrder",
     "RelativePath": "api/Order/Cancelled-order",
@@ -871,6 +943,11 @@
       },
       {
         "Name": "VariantTypesJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ColorJson",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -1260,6 +1337,11 @@
         "IsRequired": false
       },
       {
+        "Name": "ColorID",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "ExistingImageIdsToKeep",
         "Type": "System.String",
         "IsRequired": false
@@ -1279,7 +1361,7 @@
   },
   {
     "ContainingType": "my_cosmetic_store.Controllers.UserController",
-    "Method": "GetAllUserAdmin",
+    "Method": "DeleteUser",
     "RelativePath": "api/User/DeleteUser",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -1371,6 +1453,32 @@
   },
   {
     "ContainingType": "my_cosmetic_store.Controllers.UserController",
+    "Method": "SetStaffRole",
+    "RelativePath": "api/User/SetStaffRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "my_cosmetic_store.Utility.MessageData",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "my_cosmetic_store.Controllers.UserController",
     "Method": "UpdateUserAddress",
     "RelativePath": "api/User/UpdateUserAddress",
     "HttpMethod": "PUT",
@@ -1404,39 +1512,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "UserName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Phone",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Address",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Avatar",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "DateOfBirth",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "my_cosmetic_store.Dtos.Request.UpdateUserInfor",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [

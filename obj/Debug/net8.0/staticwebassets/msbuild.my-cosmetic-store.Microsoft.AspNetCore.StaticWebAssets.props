@@ -1314,6 +1314,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\87e89271-592d-4d6d-8814-964ec9ba2b3a.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>my-cosmetic-store</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/my-cosmetic-store</BasePath>
+      <RelativePath>images/products/891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>a4c81ai9ey</Fingerprint>
+      <Integrity>WlhPj2Ku8J0Vic53OASaYm+GaBq4IZ4lw3FRKPrxLnw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\891adb32-40bc-460b-a1d4-7d12fb40cd5a.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\8b1cd135-3b7f-4a53-89cd-7a2b0f241104.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>my-cosmetic-store</SourceId>

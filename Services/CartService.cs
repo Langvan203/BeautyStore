@@ -46,6 +46,9 @@ namespace my_cosmetic_store.Services
                 .Include(x => x.Cart_Items)
                     .ThenInclude(x => x.ProductVariant)
                     .ThenInclude(x => x.Variant)
+                .Include(x => x.Cart_Items)
+                    .ThenInclude(x => x.ProductColor)
+                    .ThenInclude(x => x.Color)
                 .FirstOrDefault();
             if (cartFind == null)
             {
@@ -65,6 +68,8 @@ namespace my_cosmetic_store.Services
             var cart = _cartRepository.FindByCondition(x => x.UserID == UserID && !x.IsCheckOut)
                 .Include(x => x.Cart_Items)
                     .ThenInclude(x => x.ProductVariant)
+                .Include(x => x.Cart_Items)
+                    .ThenInclude(x => x.ProductColor)
                     .FirstOrDefault();
             if(cart == null)
             {
@@ -75,11 +80,11 @@ namespace my_cosmetic_store.Services
                 };
                 _cartRepository.Create(cart);
             }
-            var existingItem = cart.Cart_Items.FirstOrDefault(x => x.ProductID == request.ProductID && x.ProductVariantId == request.VariantID);
+            var existingItem = cart.Cart_Items.FirstOrDefault(x => x.ProductID == request.ProductID && x.ProductVariantId == request.VariantID && x.ProductColorId == request.ColorID);
             var productDiscount = _productRepository.FindByCondition(x => x.ProductID == request.ProductID).FirstOrDefault().ProductDiscount;
             if (existingItem != null)
             {
-                if (existingItem.ProductVariantId == request.VariantID)
+                if (existingItem.ProductVariantId == request.VariantID && existingItem.ProductColorId == request.ColorID)
                 {
                     existingItem.CartItemPrice += request.Quantity * (existingItem.ProductVariant.PriceOfVariant - (existingItem.ProductVariant.PriceOfVariant * (decimal)productDiscount / 100));
                     existingItem.CartItemQuantity += request.Quantity;
@@ -98,6 +103,7 @@ namespace my_cosmetic_store.Services
                         CartItemQuantity = request.Quantity,
                         CartItemPrice = request.Quantity * (findPriceForVariant.PriceOfVariant - (findPriceForVariant.PriceOfVariant * (decimal)productDiscount / 100)),
                         ProductVariantId = request.VariantID,
+                        ProductColorId = request.ColorID,
                     };
                     _cart_ItemRepository.Create(newCartItem);
                     //_cartRepository.UpdateByEntity(cart);
@@ -117,6 +123,9 @@ namespace my_cosmetic_store.Services
                 .Include(x => x.Cart_Items)
                     .ThenInclude(x => x.ProductVariant)
                     .ThenInclude(x => x.Variant)
+                .Include(x => x.Cart_Items)
+                    .ThenInclude(x => x.ProductColor)
+                    .ThenInclude(x => x.Color)
                 .FirstOrDefault();
             return MapCartToCartResponseDto(cart);
         }
@@ -211,6 +220,9 @@ namespace my_cosmetic_store.Services
                         .ThenInclude(x => x.Product)
                     .Include(x => x.Cart_Items)
                         .ThenInclude(x => x.Product)
+                    .Include(x => x.Cart_Items)
+                        .ThenInclude(x => x.ProductColor)
+                        .ThenInclude(x => x.Color)
                     .FirstOrDefault();
 
                 if (cart == null || !cart.Cart_Items.Any())
@@ -253,6 +265,7 @@ namespace my_cosmetic_store.Services
                         Price = item.ProductVariant.PriceOfVariant - (item.ProductVariant.PriceOfVariant * item.Product.ProductDiscount / 100),
                         ProductVariantId = item.ProductVariant.VariantId,
                         PriceOfVariant = item.ProductVariant.PriceOfVariant,
+                        ProductColorId = item.ProductColorId,
                     };
                     order.Order_Items.Add(orderItem);
                 }
@@ -278,6 +291,12 @@ namespace my_cosmetic_store.Services
                     .Include(o => o.Order_Items)
                         .ThenInclude(oi => oi.Product)
                         .ThenInclude(oi => oi.ProductImages)
+                    .Include(x => x.Order_Items)
+                        .ThenInclude(x => x.ProductVariant)
+                        .ThenInclude(x => x.Variant)
+                    .Include(x => x.Order_Items)
+                        .ThenInclude(x => x.ProductColor)
+                        .ThenInclude(x => x.Color)
                     .FirstOrDefaultAsync(o => o.OrderID == order.OrderID);
 
                 return MapOrderToOrderResponseDto(completeOrder);
@@ -308,6 +327,7 @@ namespace my_cosmetic_store.Services
                     var product = item.Product;
                     var mainImage = product.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault();
                     var productVariant = item.ProductVariant;
+                    var productColor = item.ProductColor;
                     var subTotal = productVariant.PriceOfVariant * item.CartItemQuantity - (productVariant.PriceOfVariant * item.CartItemQuantity * (decimal)product.ProductDiscount / 100);
                     response.Items.Add(new CartItemDetailResponse
                     {
@@ -319,7 +339,9 @@ namespace my_cosmetic_store.Services
                         Discount = Convert.ToDouble(product.ProductDiscount),
                         Price = productVariant.PriceOfVariant,
                         Variant = productVariant.Variant.VariantName,
-                        SubTotal = Convert.ToDecimal(subTotal)
+                        SubTotal = Convert.ToDecimal(subTotal),
+                        ColorName = productColor.Color.ColorName,
+                        ColorCode = productColor.Color.ColorHexaValue,
                     });
                     response.TotalPrice += Convert.ToDecimal(subTotal);
                 }
@@ -348,6 +370,8 @@ namespace my_cosmetic_store.Services
                 {
                     var product = item.Product;
                     var mainImage = product.ProductImages.Where(x => x.Is_primary == 1).Select(x => x.ImageUrl).FirstOrDefault();
+                    var productVariant = item.ProductVariant;
+                    var productColor = item.ProductColor;
                     response.Items.Add(new OrderItemDetailDto
                     {
                         OrderItemID = item.OrderItemID,
@@ -357,7 +381,10 @@ namespace my_cosmetic_store.Services
                         Quantity = item.Quantity,
                         Discount = Convert.ToDouble(product.ProductDiscount),
                         Price = item.Price,
-                        SubTotal = Convert.ToDecimal(item.Price * item.Quantity - (item.Price * item.Quantity * (decimal)product.ProductDiscount/100))
+                        SubTotal = Convert.ToDecimal(item.Price * item.Quantity - (item.Price * item.Quantity * (decimal)product.ProductDiscount/100)),
+                        Variant = productVariant.Variant.VariantName,
+                        ColorName = productColor.Color.ColorName,
+                        ColorCode = productColor.Color.ColorHexaValue,
                     });
                 }
             }

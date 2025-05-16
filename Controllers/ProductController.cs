@@ -23,7 +23,7 @@ namespace my_cosmetic_store.Controllers
         }
 
         [HttpPost("Create-product-images")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public MessageData CreateProduct([FromForm] CreateNewProductRequest request)
         {
             try
@@ -57,7 +57,7 @@ namespace my_cosmetic_store.Controllers
                 return NG(ex);
             }
         }
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         [HttpGet("Get-all-product-admin")]
         public MessageData GetAllProductAdmin()
         {
@@ -197,7 +197,7 @@ namespace my_cosmetic_store.Controllers
         }
 
         [HttpDelete("Delete-product")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public MessageData DeleteProduct(int id)
         {
             try
@@ -212,7 +212,7 @@ namespace my_cosmetic_store.Controllers
         }
 
         [HttpPut("Update-product")]
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1,2")]
         public MessageData UpdateProduct([FromForm] UpdateProductRequest request)
         {
             try

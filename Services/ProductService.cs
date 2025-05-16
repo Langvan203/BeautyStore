@@ -22,6 +22,8 @@ namespace my_cosmetic_store.Services
         private readonly ProductImageRepository _productImageRepository;
         private readonly VariantTypeRepository _variantTypeRepository;
         private readonly ProductVariantRepository _productVariantRepository;
+        private readonly ProductColorRepository _productColorRepository;
+        private readonly ColorRepository _colorRepository;
 
 
         public ProductService(ApiOptions apiOptions, DatabaseContext context, IMapper mapper, IWebHostEnvironment webHostEnvironment)
@@ -31,7 +33,9 @@ namespace my_cosmetic_store.Services
             _categoryRepository = new CategoryRepository(apiOptions, context, mapper);
             _productImageRepository = new ProductImageRepository(apiOptions, context, mapper);
             _productVariantRepository = new ProductVariantRepository(apiOptions, context, mapper);
+            _colorRepository = new ColorRepository(apiOptions,context, mapper);
             _variantTypeRepository = new VariantTypeRepository(apiOptions, context, mapper);
+            _productColorRepository = new ProductColorRepository(apiOptions, context, mapper);
             _apiOptions = apiOptions;
             _mapper = mapper;
             _webHostEnvironment = webHostEnvironment;
@@ -44,6 +48,7 @@ namespace my_cosmetic_store.Services
                 var checkBrand = _brandRepository.FindByCondition(x => x.BrandID == request.BrandID).FirstOrDefault();
                 var checkCategory = _categoryRepository.FindByCondition(x => x.CategoryID == request.CategoryID).FirstOrDefault();
                 List<VariantTypeDto> variantTypes = new List<VariantTypeDto>();
+                List<ColorTypeDto> colors = new List<ColorTypeDto>();
                 if (!string.IsNullOrEmpty(request.VariantTypesJson))
                 {
                     variantTypes = System.Text.Json.JsonSerializer.Deserialize<List<VariantTypeDto>>(request.VariantTypesJson);
@@ -52,13 +57,29 @@ namespace my_cosmetic_store.Services
                 {
                     variantTypes = new List<VariantTypeDto>(); // Gán mặc định nếu không có dữ liệu
                 }
+                if(!string.IsNullOrEmpty(request.ColorJson))
+                {
+                    colors = System.Text.Json.JsonSerializer.Deserialize<List<ColorTypeDto>>(request.ColorJson);
+                }
+                else
+                {
+                    colors = new List<ColorTypeDto>(); // Gán mặc định nếu không có dữ liệu
+                }
                 var requestVariant = variantTypes.Select(x => new
                 {
                     variantid = x.VariantID,
                     price = x.VariantPrice,
                     stock = x.VariantStock
                 }).ToList();
+
+                var requestColor = colors.Select(x => new
+                {
+                    colorId = x.ColorID,
+                }).ToList();
+
                 var listVariant = _variantTypeRepository.FindAll().Select(x => x.VariantId).ToList();
+                var listColor = _colorRepository.FindAll().Select(x => x.ColorID).ToList();
+
                 if (checkBrand == null || checkCategory == null)
                 {
                     throw new Exception("Vui lòng kiểm tra lại giá trị brandId và categoryId");
@@ -69,13 +90,13 @@ namespace my_cosmetic_store.Services
                     BrandID = request.BrandID,
                     CategoryID = request.CategoryID,
                     ProductDescription = request.ProductDescription,
-                    ProductStock = request.ProductStock,
                     ProductPrice = request.ProductPrice,
                     ProductDiscount = request.ProductDiscount,
                     ProductIngredient = request.ProductIngredient,
                     ProductUserManual = request.ProductUserManual,
                     ProductImages = new List<Product_Images>(),
-                    ProductVariants = new List<ProductVariant>()
+                    ProductVariants = new List<ProductVariant>(),
+                    ProductColors = new List<ProductColor>()
                 };
                 _productRepository.Create(newProduct);
                 var imageRecord = new List<Product_Images>();
@@ -104,9 +125,17 @@ namespace my_cosmetic_store.Services
                     imageRecord.Add(productImage);
                 }
                 var listVariantProducts = new List<ProductVariant>();
+                var listColorProducts = new List<ProductColor>();
+
+
                 var listVariantAdd = requestVariant.Select(x => x.variantid).ToList();
+                var listColorAdd = requestColor.Select(x => x.colorId).ToList();
+
+
                 var listPriceVariant = requestVariant.Select(x => x.price).ToList();
+
                 var listStockVariant = requestVariant.Select(x => x.stock).ToList();
+
                 for(int i = 0; i < variantTypes.Count; i++)
                 {
                     if (listVariant.Contains(listVariantAdd[i]))
@@ -121,10 +150,28 @@ namespace my_cosmetic_store.Services
                         listVariantProducts.Add(newVariant);
                     }    
                 }    
+
+                for(int i = 0; i < colors.Count; i++)
+                {
+                    if (listColor.Contains(listColorAdd[i]))
+                    {
+                        var newColor = new ProductColor
+                        {
+                            ProductID = newProduct.ProductID,
+                            ColorID = listColorAdd[i],
+                        };
+                        listColorProducts.Add(newColor);
+                    }    
+                }    
+
                 _productImageRepository.AddRangeAsync(imageRecord);
+
                 _productVariantRepository.AddRangeAsync(listVariantProducts);
+                _productColorRepository.AddRangeAsync(listColorProducts);
+
                 newProduct.ProductImages = imageRecord;
                 newProduct.ProductVariants = listVariantProducts;
+                newProduct.ProductColors = listColorProducts;
                 var product = _productRepository.FindByCondition(x => x.ProductID == newProduct.ProductID).Select(x => new
                 {
                     productID = x.ProductID,
@@ -147,7 +194,7 @@ namespace my_cosmetic_store.Services
         }
         public object GetAllProduct()
         {
-            var products = _productRepository.FindAll().Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).Select(x => new
+            var products = _productRepository.FindAll().Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).Include(x => x.ProductColors).ThenInclude(x => x.Color).Select(x => new
             {
                 productID = x.ProductID,
                 productName = x.ProductName,
@@ -166,8 +213,14 @@ namespace my_cosmetic_store.Services
                     variantName = findProduct.Variant.VariantName,
                     price = findProduct.PriceOfVariant,
                     stock = findProduct.StockOfVariant
-
                 }).ToList(),
+                colors = x.ProductColors.Select(findProduct => new
+                {
+                    colorId = findProduct.Color.ColorID,
+                    colorName = findProduct.Color.ColorName,
+                    colorValue = findProduct.Color.ColorHexaValue,
+                    stock = findProduct.StockOfColor
+                })
             }).ToList();
             return products;
         }
@@ -190,7 +243,13 @@ namespace my_cosmetic_store.Services
         {
             try
             {
-                var findProduct = _productRepository.FindByCondition(x => x.ProductID == productId).Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).FirstOrDefault();
+                var findProduct = _productRepository.FindByCondition(x => x.ProductID == productId)
+                    .Include(x => x.ProductImages)
+                    .Include(x => x.ProductVariants)
+                        .ThenInclude(x => x.Variant)
+                    .Include(x => x.ProductColors)
+                        .ThenInclude(x => x.Color)
+                        .FirstOrDefault();
                 if(findProduct != null)
                 {
                     var findProductUpdate = new
@@ -218,6 +277,13 @@ namespace my_cosmetic_store.Services
                             url = x.ImageUrl,
                             isMain = x.Is_primary == 1 ? true : false
                         }).ToList(),
+                        colors = findProduct.ProductColors.Select(findProduct => new
+                        {
+                            colorId = findProduct.Color.ColorID,
+                            colorName = findProduct.Color.ColorName,
+                            colorCode = findProduct.Color.ColorHexaValue,
+                            stock = findProduct.StockOfColor
+                        }).ToList(),
                     };
                     return findProductUpdate;
                 }
@@ -241,7 +307,7 @@ namespace my_cosmetic_store.Services
         }
         public object GetProductById(int id)
         {
-            var product = _productRepository.FindByCondition(x => x.ProductID == id).Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).Select(x => new
+            var product = _productRepository.FindByCondition(x => x.ProductID == id).Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).Include(x => x.ProductColors).ThenInclude(x => x.Color).Select(x => new
             {
                 productID = x.ProductID,
                 productName = x.ProductName,
@@ -262,8 +328,14 @@ namespace my_cosmetic_store.Services
                     variantName = findProduct.Variant.VariantName,
                     price = findProduct.PriceOfVariant,
                     stock = findProduct.StockOfVariant
-
                 }).ToList(),
+                colors = x.ProductColors.Select(findProduct => new
+                {
+                    colorId = findProduct.Color.ColorID,
+                    colorName = findProduct.Color.ColorName,
+                    stock = findProduct.StockOfColor,
+                    colorCode = findProduct.Color.ColorHexaValue
+                })
             }).FirstOrDefault();
             return product;
         }
@@ -372,7 +444,7 @@ namespace my_cosmetic_store.Services
 
         public object UpdateProduct(UpdateProductRequest request)
         {
-            var findProduct = _productRepository.FindByCondition(x => x.ProductID == request.ProductID).Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).FirstOrDefault();
+            var findProduct = _productRepository.FindByCondition(x => x.ProductID == request.ProductID).Include(x => x.ProductImages).Include(x => x.ProductVariants).ThenInclude(x => x.Variant).Include(x => x.ProductColors).ThenInclude(x => x.Color).FirstOrDefault();
             #region old version
             //if (findProduct != null)
             //{
@@ -512,6 +584,7 @@ namespace my_cosmetic_store.Services
 
 
             List<VariantTypeDto> variantTypes = new List<VariantTypeDto>();
+            List<ColorTypeDto> colorTypes = new List<ColorTypeDto>();
             if (!string.IsNullOrEmpty(request.VariantID))
             {
                 variantTypes = System.Text.Json.JsonSerializer.Deserialize<List<VariantTypeDto>>(request.VariantID);
@@ -520,20 +593,42 @@ namespace my_cosmetic_store.Services
             {
                 variantTypes = new List<VariantTypeDto>(); // Gán mặc định nếu không có dữ liệu
             }
+            if (!string.IsNullOrEmpty(request.ColorID))
+            {
+                colorTypes = System.Text.Json.JsonSerializer.Deserialize<List<ColorTypeDto>>(request.ColorID);
+            }
+            else
+            {
+                colorTypes = new List<ColorTypeDto>(); // Gán mặc định nếu không có dữ liệu
+            }
+
             var requestVariant = variantTypes.Select(x => new
             {
                 variantid = x.VariantID,
                 price = x.VariantPrice,
                 stock = x.VariantStock
             }).ToList();
+            var requestColor = colorTypes.Select(x => new
+            {
+                colorId = x.ColorID,
+            }).ToList();
+
+
             var listKeepvariantId = requestVariant.Select(x => x.variantid).ToList();
+            var listKeepColorId = requestColor.Select(x => x.colorId).ToList();
+
+
             var listPriceNewAdd = requestVariant.Select(x => x.price).ToList();
+
             var listStockNewAdd = requestVariant.Select(x => x.stock).ToList();
             var currentVariants = findProduct.ProductVariants.Select(x => x.VariantId).ToList();
+            var currentColors = findProduct.ProductColors.Select(x => x.ColorID).ToList();
 
             // 1. Xóa variants không còn được chọn
             var variantsToRemove = currentVariants.Except(listKeepvariantId).ToList();
-            if(variantsToRemove.Count > 0)
+            var colorsToRemove = currentColors.Except(listKeepColorId).ToList();
+
+            if (variantsToRemove.Count > 0)
             {
                 foreach (var variantId in variantsToRemove)
                 {
@@ -543,7 +638,21 @@ namespace my_cosmetic_store.Services
                         _productVariantRepository.DeleteByEntity(pv);
                     }
                 }
-            }    
+            }
+            if (colorsToRemove.Count > 0)
+            {
+                foreach (var colorId in colorsToRemove)
+                {
+                    var pc = findProduct.ProductColors.FirstOrDefault(pc => pc.ColorID == colorId);
+                    if (pc != null)
+                    {
+                        _productColorRepository.DeleteByEntity(pc);
+                    }
+                }
+            }
+
+
+
             // 2. Thêm variants mới
             var variantsToAdd = listKeepvariantId.Except(currentVariants).ToList();
             if (variantsToAdd.Count > 0)
@@ -560,9 +669,30 @@ namespace my_cosmetic_store.Services
                     _productVariantRepository.Create(newVariant);
                 }
             }
+            // 2. Thêm colors mới
+            var colorsToAdd = listKeepColorId.Except(currentColors).ToList();
+            if (colorsToAdd.Count > 0)
+            {
+                for (int i = 0; i < colorsToAdd.Count; i++)
+                {
+                    var newColor = new ProductColor
+                    {
+                        ProductID = findProduct.ProductID,
+                        ColorID = colorsToAdd[i],
+                    };
+                    _productColorRepository.Create(newColor);
+                }
+            }
+
+
+
+
             //3. cập nhật lại giá và stock nếu không có variant mới được thêm hoặc bớt đi
             var currentProductVariant = findProduct.ProductVariants;
-            for(int i = 0; i < listKeepvariantId.Count; i++)
+
+            var currentProductColor = findProduct.ProductColors;
+
+            for (int i = 0; i < listKeepvariantId.Count; i++)
             {
                 var findUpdateVariant = currentProductVariant.Where(x => x.VariantId == listKeepvariantId[i]).FirstOrDefault();
                 if(findUpdateVariant != null)
@@ -571,7 +701,17 @@ namespace my_cosmetic_store.Services
                     findUpdateVariant.StockOfVariant = listStockNewAdd[i];
                     _productVariantRepository.UpdateByEntity(findUpdateVariant);
                 }    
-            }    
+            }
+
+
+            for (int i = 0; i < listKeepColorId.Count; i++)
+            {
+                var findUpdateColor = currentProductColor.Where(x => x.ColorID == listKeepColorId[i]).FirstOrDefault();
+                if (findUpdateColor != null)
+                {
+                    _productColorRepository.UpdateByEntity(findUpdateColor);
+                }
+            }
             // Cập nhật sản phẩm
             _productRepository.UpdateByEntity(findProduct);
             return new
