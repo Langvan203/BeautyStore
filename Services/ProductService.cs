@@ -226,14 +226,14 @@ namespace my_cosmetic_store.Services
         }
         public object GetAllProductAdmin()
         {
-            var products = _productRepository.FindAll().Include(x => x.Brand).Include(x => x.Category).Select(x => new
+            var products = _productRepository.FindAll().Include(x => x.Brand).Include(x => x.ProductVariants).Include(x => x.Category).Select(x => new
             {
                 id = x.ProductID,
                 name = x.ProductName,
                 category = x.Category.Name,
                 brand = x.Brand.Name,
                 price = x.ProductPrice,
-                stock = x.ProductStock,
+                stock = x.ProductVariants.Sum(x => x.StockOfVariant),
                 discount = x.ProductDiscount,
             }).ToList();
             return products;
